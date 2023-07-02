@@ -1,0 +1,181 @@
+% ==== Header for document with math =========
+
+% --- input -----------------------------------
+  \usepackage[utf8]{inputenc}
+
+% --- math -----------------------------------
+  \usepackage{amsmath}
+  \usepackage{amsfonts}
+  \usepackage{amstext}
+  \usepackage{amssymb}
+  \usepackage{amsthm}
+  
+
+% --- graphic and formating ------------------
+  % bibliography
+  \usepackage[sort,comma]{natbib}
+  % settings
+  \usepackage{enumitem}
+  \usepackage{setspace}
+  \usepackage{pdflscape}
+  \usepackage{graphicx}
+  \usepackage{wrapfig}
+  \usepackage[hypcap]{caption}
+  \usepackage{subcaption}
+  % \usepackage[cm]{fullpage}
+  \usepackage[top=2cm, bottom=1.7cm, left=3.6cm, right=1.1cm]{geometry}
+  % \usepackage[leftmargin=2.5cm]{geometry}
+  %\usepackage{subfigure}
+  %\usepackage{caption}
+  %\usepackage{subcaption}  
+  \usepackage{placeins}
+  \usepackage{makeidx} 
+  \usepackage{epstopdf}
+  % \usepackage{tocloft}     % custom lists
+  % \usepackage{minitoc}     % table of content in a chapter
+  
+   \usepackage{listings}     % code listings
+  % \usepackage[printwatermark]{xwatermark} % \usepackage{draftwatermark}
+  
+  \usepackage[colorlinks=true,linkcolor=interlink,citecolor=DarkCite]{hyperref}
+  
+  % \usepackage{picture}
+  \usepackage[usenames,dvipsnames]{color}
+  \usepackage{colortbl} 
+  
+
+   \setlength{\headsep}{16pt}
+%    
+   \usepackage{fancyhdr}
+ % ---- fancy page setting -------------- 
+   %\input{style_header_footer.tex}
+   \input{style1headerfooter.tex}
+  %-----------------------------
+  
+  % picture libraries
+  \usepackage{tikz} % Required for flow chart
+   \usetikzlibrary{arrows,positioning} % Tikz libraries required for the flow chart in the template
+   
+       \tikzset{
+        %Define standard arrow tip
+        >=stealth',
+        %Define style for boxes
+        point/.style={
+           rectangle,
+           rounded corners,
+           draw=black, very thick,
+           text width=6.5em,
+           minimum height=2em,
+           text centered},
+        % Define arrow style
+        pil/.style={
+           ->,
+           thick,
+           shorten <=2pt,
+           shorten >=2pt,}
+    }
+
+   \usepackage{csvsimple}  % csv table
+   
+   \usepackage{lipsum}    % filler text
+   
+   
+  \hypersetup{
+    % bookmarks=false,         % show bookmarks bar?https://www.overleaf.com/project/637266f5927ea984e19f515e
+    % unicode=false,          % non-Latin characters in Acrobat’s bookmarks
+    % pdftoolbar=false,        % show Acrobat’s toolbar?
+    % pdfmenubar=false,        % show Acrobat’s menu?
+%     % pdffitwindow=false,     % window fit to page when opened
+    % pdfstartview={FitH},    % fits the width of the page to the window
+    pdfinfo={
+        Title={Informal LaTeX workshop},
+        Author={InScAPE group},
+        Creator={Your Name Here},
+        Producer={Institute for Geophysics and Meteorology},
+        Subject={Informal LaTeX workshop on intermediate and advanced topics},
+        Keywords={tables, tikz, counters}
+    },
+    %pdfauthor={Author},     % author
+    %pdfsubject={Subject},   % subject of the document
+    %pdfcreator={Creator},   % creator of the document
+    %pdfproducer={Producer}, % producer of the document
+    %pdfkeywords={keyword1, key2, key3}, % list of keywords
+    % pdfnewwindow=true,      % links in new PDF window
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor= ref_out,          % color of internal links (change box color with linkbordercolor)
+    linkbordercolor = red, %
+    urlbordercolor = {0 0.6 1},   % 
+    citecolor=green,        % color of links to bibliography
+    filecolor=cyan,         % color of file links
+    urlcolor=magenta       % color of external links
+    % pdfborderstyle={/S/U/W 1}% border style will be underline of width 1pt
+} 
+
+% ---- new commands --------------------------
+  % ----- link colours ------------
+    \newcommand{\reffig}[1]%
+    {\hypersetup{linkcolor=figlink}%
+    \ref{#1}%
+    \hypersetup{linkcolor=interlink}}
+ 
+  % ---- math symbols  ----------------------- 
+  \newcommand{\e}{\mathrm{e}}
+  \newcommand{\dx}{\mathrm{d}}
+  \newcommand{\normal}{\mathbi{n}}
+  \newcommand{\bsigma}{\mathbf{t}}
+  \newcommand{\vnull}{\mathbf{0} \!\!\! ^{ _{ _{\scriptscriptstyle -}}}}
+  \newcommand{\vnullt}{\mathbf{0}^{ \mathrm{T} \!\!\!\!\!\!\! \! _{ _{\scriptscriptstyle -}}}}
+  % ---- math fonts -------------------------- 
+  \newcommand{\mathbs}[1]{\textsf{#1}}
+  \newcommand{\mathbi}[1]{\textbf{\emph #1}}
+  \newcommand{\mathff}{\textbf{\textit f}}
+  \newcommand{\mathbis}[1]{\textsf{\em #1}}
+  \newcommand{\mathcb}[1]{\boldsymbol{\mathcal #1}}
+  
+  
+\newcommand{\thv}{\theta_{\scriptscriptstyle \mathcal{V} }}
+\newcommand{\thml}{\theta^{\scriptscriptstyle \mathrm{(ML)}}}
+
+  % --- modifying existing commands -------------------
+  
+
+  
+  % ---- our own Macros  --------------------------
+  
+  %  our own lists 
+%  \newcommand{\listoflists}{List of Lists}  % we add a list
+  
+%  \newlistof{lists}{tol}{\listoflists}      % list itself 
+  
+%  \newcommand{\list}[1]{%
+%    \refstepcounter{lists}
+%    \par\noindent\textbf{lists \theexample. #1}
+%    \addcontentsline{tol}{list}
+%    {\protect\numberline{\thechapter.\theexample}#1}\par
+  
+  
+
+% ---- latex commands -----------------------
+  % --- graphic commands --------------------
+  \DeclareGraphicsExtensions{.png,.jpg}
+
+  % --- colour definition ------------------
+  % colour definition
+  \definecolor{GreenDone}{rgb}{0.2,0.7,0.2}
+  \definecolor{lightorange}{rgb}{0.9,0.4,0}
+  \definecolor{lightestorange}{rgb}{1,0.8,0.5}
+  \definecolor{darkorange}{rgb}{0.2,0.1,0}
+  \definecolor{interlink}{rgb}{0.6,0,0}
+  \definecolor{DarkCite}{rgb}{0,0.3,0}
+  % \definecolor{ref_out}{rgb}{0.3,0.3,0}
+  \definecolor{ref_out}{rgb}{0.6,0,0}
+  \definecolor{lightyellow}{rgb}{0.99,0.99,0.4}
+  \definecolor{UeaBlue}{RGB}{0,76,103}
+  \definecolor{LightBlue}{RGB}{20,20,250}
+  \definecolor{DarkBlue}{RGB}{15,10,100}  
+  \definecolor{figlink}{RGB}{45,10,120} 
+  \definecolor{bordercol}{RGB}{40,40,40}
+  \definecolor{headercol1}{RGB}{186,215,230}
+  \definecolor{headercol2}{RGB}{0,76,103}
+  \definecolor{headerfontcol}{RGB}{0,0,0}
+  \definecolor{boxcolor}{RGB}{186,215,230}

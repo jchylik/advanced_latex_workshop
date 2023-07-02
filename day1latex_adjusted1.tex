@@ -1,0 +1,173 @@
+\documentclass[a4paper,10pt]{report} % {article}
+%\documentclass[a4paper,10pt]{scrartcl}
+
+
+\input{./in1header.tex}
+
+\title{Advanced LaTeX Workshop}
+\author{Your Name Here}
+\date{19 June 2023} 
+
+\pdfinfo{%
+  /Title    (Advance LaTeX Workshop) 
+  /Author   (Your Name Here)
+  /Creator  (Your Name Here)
+  /Producer (InScAPE)
+  /Subject  (Intermediate and Advanced LaTeX)
+  /Keywords (listing, tikz, macrtos)
+}
+ 
+\begin{document}
+% later: #4 generating index 
+%--------------
+%\makeindex
+%--------------
+
+
+% \maketitle
+ \pagestyle{fancy}
+ 
+%-------- Workshop overview-------------------------------
+ We are organising an informal \textbf{workshop} on the \textbf{intermediate and advanced topics} in \LaTeX.
+Although there are various \LaTeX tutorials and templates floating around, but they often omit some tools and packages that are useful in meteorology and geophysics. The workshop is primary focused on PhD students who are starting to write their thesis, but it is open to other \LaTeX users as well.
+ \begin{enumerate}
+ \item  Monday 19. June --- from 12:45 in CIP room 
+ \item  Wednesday 21. June --- from 15:00 in CIP room
+\end{enumerate}
+
+\noindent
+You can work from CIP workstation or bring your own device.~\\
+
+ \begin{tabular}{l p{0.7\textwidth}}
+   target audience: & people with previous experience with \LaTeX \\
+   aims:  & discuss \LaTeX ~topics practise skills \\
+   duration: & one and half hour from start time or until you start getting tired \\
+   topics: & see following sections \ref{sec:monday} and \ref{sec:wednesday} \\
+   registration: & comment in this Slack thread \\ 
+ \end{tabular}
+
+%-----------------------------------------------------------------------------
+ 
+\section{Monday} \label{sec:monday}
+
+\pagenumbering{arabic} 
+\setcounter{page}{1}
+
+
+\subsection{Combining Document from Pieces}
+Combining documents from multiple files speeds up the editing process, makes collaboration easier, and also lowers the risk of accidentally rewriting something. You can see an example how most of the header of this document is in a separate file.
+% #1 
+To try this, write some dummy text in a separate file and insert is here using the \texttt{input} command:\\
+\input{just2lines.txt}
+
+% #2 
+The \texttt{input} statement can also work on multiple levels
+\begin{enumerate}
+    \item Make a copy of \texttt{style1headerfooter.tex} and modify it.
+    \item Open \texttt{in1header.tex} and replace \texttt{style1headerfooter.tex} with the name of your new file.
+    \item Recompile the main document.
+\end{enumerate} 
+
+
+
+\subsection{Automatically Generated Lists}\label{sec:automatic}
+There is an easy way how to create list of figures, tables, as well as index of phrases. 
+
+% We are going to start witth this documet
+%  #1 change the class of document from article to report
+%  
+
+
+\maketitle
+\pagenumbering{roman}
+%   \let\clearpage\relax 
+   \tableofcontents
+    \label{contents}
+   \addcontentsline{toc}{section}{Table of Contents} 
+   \let\clearpage\relax
+   \addcontentsline{toc}{section}{List of Tables}
+    \listoftables    
+   \addcontentsline{toc}{section}{List of Figures} 
+   \let\clearpage\relax 
+   \listoffigures
+    \chapter*{List of Symbols}
+   \addcontentsline{toc}{section}{List of Symbols}
+   \input{./list_symbols.tex} 
+% \newpage
+
+\setcounter{chapter}{1}
+\setcounter{figure}{1} 
+\addcontentsline{lof}{figure}{ \arabic{chapter}.\arabic{figure}  Fake Figure} 
+
+\newpage
+
+\setcounter{chapter}{2}
+\newcounter{warning}[chapter]
+\pagenumbering{arabic}
+\chapter{Monday} 
+
+ \setcounter{section}{2}
+ \setcounter{subsection}{7}
+ \subsection{Counters}\label{sec:counters}
+How did we suddenly jump from section \ref{sec:figures} to \ref{sec:counters}  ? We are now in the chapter \arabic{chapter} or \Roman{chapter} in roman numbers.
+
+ \stepcounter{section}
+ \stepcounter{warning}
+ Warning \arabic{warning}:  No new ideas here.\\
+ \stepcounter{warning}
+ 
+  \subsection{This is Empty Subsection}
+
+ \addtocounter{subsection}{3}
+ \subsection{Modifying Plots and Schematics}\label{sec:figures}
+  Warning \arabic{warning}:  The figure might be boring.\\
+ %\newpage
+ %\thispagestyle{empty}
+ \begin{figure}[h!]
+     %\input{./diagram.tex}
+      \begin{tikzpicture}[node distance=8mm, auto,]
+        %nodes
+        \node[point] (market) { \nameref{sec:automatic} };
+        \node[point, inner sep=5pt,below=0.5cm of market]
+        (conference) {Conferences (see \ref{sec:automatic})};
+        % We make a dummy figure to make everything look nice.
+        \node[above=of market] (dummy) {};
+        \node[right=of dummy] (t) {Poster template}
+        edge[pil,bend left=45] (market.east) % edges are used to connect two nodes
+        edge[pil, bend left=45] (conference.east); % .east since we want
+                                                    % consistent style
+        \node[left=of dummy] (g) {Feedback}
+        edge[pil, <-,bend right=45] (market.west)
+        edge[pil,->, bend left=45] node[auto] {Poster Idea \pageref{fig:standalone} } (t);
+    \end{tikzpicture}~\hspace{-2ex}
+    \includegraphics[width=0.7\textwidth]{standalone.pdf}
+        \caption[Diagrams and plots]{Here we combine a \textbf{Tikz} diagrams and images. We can also compile the figure as separate \textbf{standalone} \index{standalone} pdf and then include it as a graphical element. }  
+      \label{fig:standalone}  
+ \end{figure}
+ 
+
+
+ \newpage 
+ 
+ \subsection{Customizing Links, References, and Citations}
+ Such as modifying the style of links to other parts of the same document (\nameref{sec:automatic}) and links to \href{https://geomet.uni-koeln.de/en/}{external websites}.
+ 
+ 
+ \subsection{Version Control and Comparison}
+ We also look at the external tools such as \texttt{latexdiff} that compares two \LaTeX files, and  \texttt{pdfdiff} that compares \( \ldots \) you know what.  
+  
+
+
+% #4 generating index 
+%   \clearpage
+%   \phantomsection 
+%   \addcontentsline{toc}{section}{Index}  
+%   \label{index}  
+%   Longer documents sometimes include index pages.
+%   \printindex  
+ 
+\label{LastPage}
+\newpage
+
+
+\end{document}
