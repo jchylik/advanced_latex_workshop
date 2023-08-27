@@ -125,7 +125,7 @@ How did we suddenly jump from section \ref{sec:figures} to \ref{sec:counters}  ?
  %\thispagestyle{empty}
  \begin{figure}[h!]
      %\input{./diagram.tex}
-      \begin{tikzpicture}[node distance=8mm, auto,]
+      \begin{tikzpicture}[node distance=7mm, auto,]
         %nodes
         \node[point] (market) { \nameref{sec:automatic} };
         \node[point, inner sep=5pt,below=0.5cm of market]
@@ -140,7 +140,7 @@ How did we suddenly jump from section \ref{sec:figures} to \ref{sec:counters}  ?
         edge[pil, <-,bend right=45] (market.west)
         edge[pil,->, bend left=45] node[auto] {Poster Idea \pageref{fig:standalone} } (t);
     \end{tikzpicture}~\hspace{-2ex}
-    \includegraphics[width=0.7\textwidth]{standalone.pdf}
+    \includegraphics[width=0.62\textwidth]{standalone.pdf}
         \caption[Diagrams and plots]{Here we combine a \textbf{Tikz} diagrams and images. We can also compile the figure as separate \textbf{standalone} \index{standalone} pdf and then include it as a graphical element. }  
       \label{fig:standalone}  
  \end{figure}
