@@ -354,7 +354,7 @@ In the header we already inserted \texttt{lipsum} package, and here we insert th
 \end{lstlisting}
 \lipsum[8-11]    % lore ipsum 
 
-
+\pagebreak
 \section{Code Listing with Highligths}
 You have already seen example of code listing in the previous paragprahs. Now we will look at this topic in more detail.
 With teh package \textbf{listings}, you can show the structured code and highlight parts of it. The location of the code could be:
@@ -368,7 +368,7 @@ With teh package \textbf{listings}, you can show the structured code and highlig
 \setcounter{lstlisting}{0}
 \setcounter{samplecode}{\value{lstlisting}} %\setcounter{lstlisting}{\value{samplecode}}
 \refstepcounter{samplecode}
-\begin{lstlisting}[language={c},caption={Copy and paste code (example \alph{samplecode})},label={code:python}, 
+\begin{lstlisting}[language={python},caption={Copy and paste code (example \alph{samplecode})},label={code:python}, 
      frame=single, captionpos=b, basicstyle=\footnotesize\color{cyan},showstringspaces=false, 
      keywordstyle=\color{magenta}, stringstyle=\color{brown}, commentstyle=\color{ForestGreen} 
      ]
@@ -377,7 +377,7 @@ With teh package \textbf{listings}, you can show the structured code and highlig
 \end{lstlisting}
 
 \refstepcounter{samplecode} 
-\lstinputlisting[ language={matlab}, %[latex]tex},      % tex syntax, latex option
+\lstinputlisting[ language={[latex]tex},      % tex syntax, latex option
   caption={Self-showing code (example \Alph{samplecode})}, label={code:thislatex}, 
   firstline=368, firstnumber=368, lastline=387, numbers=left, captionpos=b,
   breaklines=true, basicstyle=\scriptsize\color{darkgray}, frame=single,
