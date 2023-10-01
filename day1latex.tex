@@ -1,0 +1,185 @@
+\documentclass[a4paper,10pt]{report} % {article}
+%\documentclass[a4paper,10pt]{scrartcl}
+
+
+\input{./latex/in1header.tex}
+
+\title{Advanced LaTeX Workshop}
+\author{Your Name Here}
+\date{19 June 2023} 
+
+\pdfinfo{%
+  /Title    (Advance LaTeX Workshop) 
+  /Author   (Your Name Here)
+  /Creator  (Your Name Here)
+  /Producer (InScAPE)
+  /Subject  (Intermediate and Advanced LaTeX)
+  /Keywords (listing, tikz, macrtos) 
+}
+ 
+\begin{document}
+% later: #4 generating index 
+%--------------
+%\makeindex
+%--------------
+
+
+% \maketitle
+ \pagestyle{fancy}
+ 
+%-------- Workshop overview-------------------------------
+ We are organising an informal \textbf{workshop} on the \textbf{intermediate and advanced topics} in \LaTeX.
+Although there are various \LaTeX tutorials and templates floating around, but they often omit some tools and packages that are useful in meteorology and geophysics. The workshop is primary focused on PhD students who are starting to write their thesis, but it is open to other \LaTeX users as well.
+ \begin{enumerate}
+ \item  Monday 19. June --- from 12:45 in CIP room 
+ \item  Wednesday 21. June --- from 15:00 in CIP room
+\end{enumerate}
+
+\noindent
+You can work from CIP workstation or bring your own device.~\\
+
+ \begin{tabular}{l p{0.7\textwidth}}
+   target audience: & people with previous experience with \LaTeX \\
+   aims:  & discuss \LaTeX ~topics practise skills \\
+   duration: & one and half hour from start time or until you start getting tired \\
+   topics: & see following sections \ref{sec:monday} and \ref{sec:wednesday} \\
+   registration: & comment in this Slack thread \\ 
+ \end{tabular}
+
+%-----------------------------------------------------------------------------
+ 
+\section{Monday} \label{sec:monday}
+
+\pagenumbering{arabic} 
+\setcounter{page}{1}
+
+
+\subsection{Combining Document from Pieces}
+Combining documents from multiple files speeds up the editing process, makes collaboration easier, and also lowers the risk of accidentally rewriting something. You can see an example how most of the header of this document is in a separate file.
+% #1 
+To try this, write some dummy text in a separate file and insert is here using the \texttt{input} command:\\
+% \input{filename}
+
+% #2 
+The \texttt{input} statement can also work on multiple levels
+\begin{enumerate}
+    \item Make a copy of \texttt{latex/style1headerfooter.tex} and modify it.
+    \item Open \texttt{in1header.tex} and replace \texttt{latex/style1headerfooter.tex} with the name of your new file.
+    \item Recompile the main document.
+\end{enumerate}
+
+
+
+\subsection{Automatically Generated Lists}\label{sec:automatic}
+There is an easy way how to create list of figures, tables, as well as index of phrases. 
+
+% We are going to start witth this documet
+%  #1 change the class of document from article to report
+%  
+
+
+% \maketitle
+% \pagenumbering{roman}
+%   \let\clearpage\relax 
+%   \tableofcontents
+%    \label{contents}
+%    \addcontentsline{toc}{section}{Table of Contents} %\let\clearpage\relax
+%    \addcontentsline{toc}{section}{List of Tables}
+%    \listoftables    
+%    \addcontentsline{toc}{section}{List of Figures}  %\let\clearpage\relax 
+%    \listoffigures
+%    \chapter*{List of Symbols}
+%    \addcontentsline{toc}{section}{List of Symbols}
+%    \input{./list_symbols.tex}
+% \newpage
+
+%\chapter{Monday} 
+
+
+ \subsection{Modifying Plots and Schematics}\label{sec:figures}
+ %\newpage
+ %\thispagestyle{empty}
+ \begin{figure}[h!] 
+     %\input{./diagram.tex}
+      \begin{tikzpicture}[node distance=8mm, auto,]
+        %nodes
+        \node[point] (market) {users (b)};
+        \node[point, inner sep=5pt,below=0.5cm of market]
+        (conference) {Conferences (c)};
+        % We make a dummy figure to make everything look nice.
+        \node[above=of market] (dummy) {};
+        \node[right=of dummy] (t) {Poster template}
+        edge[pil,bend left=45] (market.east) % edges are used to connect two nodes
+        edge[pil, bend left=45] (conference.east); % .east since we want
+                                                    % consistent style
+        \node[left=of dummy] (g) {Feedback}
+        edge[pil, <-,bend right=45] (market.west)
+        edge[pil,->, bend left=45] node[auto] {Poster Idea (a)} (t);
+    \end{tikzpicture}~\hspace{-2ex}
+    \includegraphics[width=0.7\textwidth]{figures/standalone.pdf}
+        \caption[Diagrams and plots]{Here we combine a \textbf{Tikz} diagrams and images. We can also compile the figure as separate \textbf{standalone} \index{standalone} pdf and then include it as a graphical element. }  
+      \label{fig:standalone}
+ \end{figure}
+ 
+ %\setcounter{subsection}{7}
+ \subsection{Counters}\label{sec:counters}
+How did we suddenly jump from section \ref{sec:figures} to \ref{sec:counters}  ?
+
+ \newpage 
+ 
+ \subsection{Customizing Links, References, and Citations}
+ Such as modifying the style of links to other parts of the same document (\nameref{sec:automatic}) and links to \href{https://geomet.uni-koeln.de/en/}{external websites}.
+ 
+ 
+ \subsection{Version Control and Comparison}
+ We also look at the external tools such as \texttt{latexdiff} that compares two \LaTeX files, and  \texttt{pdfdiff} that compares \( \ldots \) you know what.  
+  
+
+
+\section{Wednesday} \label{sec:wednesday}
+\subsection{Code Listing with Highligths}
+Such as showing a lines from external script or showing the code of this page.
+\lstinputlisting[ language={[latex]tex},                     % tex syntax, latex option
+  firstline=93, firstnumber=93, lastline=99, numbers=left,
+  breaklines=true, basicstyle=\scriptsize, frame=single,
+  keywordstyle=\color{magenta}, commentstyle=\color{gray}  % comments are gray colour
+]{./latex_adv.tex} 
+
+\subsection{Tables} \label{sec:tables}
+Instead of copy \& paste values into tables, we just read them from an external csv file and format them.  
+
+\begin{center} 
+\csvreader[
+        tabular = |r|r|r|, 
+        table head  = \hline \( \quad  z \; \lbrack \mathrm{m} \rbrack  \) &  \(  \; \bar{u} \;  \lbrack \mathrm{m\, s}^{-1} \rbrack \)& \(  \quad \quad \Big. \bar{ \theta }  \; \lbrack \mathrm{K} \rbrack \Big. \) \\\hline ,
+        table foot = \hline & \multicolumn{2}{ c|}{\( \ldots \) } \\ \hline
+        ]{values.csv}
+        {z=\zvec, u=\uvec, theta=\thvec}{%
+            \zvec  & \uvec & \thvec 
+        }% 
+\end{center} ~\vspace{1ex}
+And the we will further style-up the table. 
+
+\subsection{More on Macros} 
+ We can define shortcuts for symbols such as \(\thml\), but we can even write conditional statements.
+ 
+ \subsection{Posters and Slideshows} 
+ If you have been struggling with Powerpoint, there is a way out \( \ldots \) 
+ 
+ \section{Dummy section}
+ \lipsum[2-7]    %generates dummy text
+ 
+ 
+% #4 generating index 
+%   \clearpage
+%   \phantomsection 
+%   \addcontentsline{toc}{section}{Index}  
+%   \label{index}  
+%   Longer documents sometimes include index pages.
+%   \printindex  
+ 
+\label{LastPage}
+\newpage
+
+
+\end{document}
