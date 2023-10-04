@@ -1,1 +1,0 @@
-If you see this text in black, it means that the difference between files is not highlighted.
