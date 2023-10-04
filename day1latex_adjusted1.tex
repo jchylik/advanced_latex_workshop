@@ -2,7 +2,7 @@
 %\documentclass[a4paper,10pt]{scrartcl}
 
 
-\input{./in1header.tex}
+\input{./latex/in1header.tex}
 
 \title{Advanced LaTeX Workshop}
 \author{Your Name Here}
@@ -58,7 +58,7 @@ You can work from CIP workstation or bring your own device.~\\
 Combining documents from multiple files speeds up the editing process, makes collaboration easier, and also lowers the risk of accidentally rewriting something. You can see an example how most of the header of this document is in a separate file.
 % #1 
 To try this, write some dummy text in a separate file and insert is here using the \texttt{input} command:\\
-\input{just2lines.txt}
+\input{./data/just2lines.txt}
 
 % #2 
 The \texttt{input} statement can also work on multiple levels
@@ -83,7 +83,7 @@ There is an easy way how to create list of figures, tables, as well as index of 
 %   \let\clearpage\relax 
    \tableofcontents
     \label{contents}
-   \addcontentsline{toc}{section}{Table of Contents} 
+   \addcontentsline{toc}{section}{Table of Contents}  
    \let\clearpage\relax
    \addcontentsline{toc}{section}{List of Tables}
     \listoftables    
@@ -92,7 +92,7 @@ There is an easy way how to create list of figures, tables, as well as index of 
    \listoffigures
     \chapter*{List of Symbols}
    \addcontentsline{toc}{section}{List of Symbols}
-   \input{./list_symbols.tex} 
+   \input{./latex/list_symbols.tex}  
 % \newpage
 
 \setcounter{chapter}{1}
@@ -124,7 +124,7 @@ How did we suddenly jump from section \ref{sec:figures} to \ref{sec:counters}  ?
  %\newpage
  %\thispagestyle{empty}
  \begin{figure}[h!]
-     %\input{./diagram.tex}
+     %\input{./latex/diagram.tex}
       \begin{tikzpicture}[node distance=7mm, auto,]
         %nodes
         \node[point] (market) { \nameref{sec:automatic} };
@@ -140,9 +140,9 @@ How did we suddenly jump from section \ref{sec:figures} to \ref{sec:counters}  ?
         edge[pil, <-,bend right=45] (market.west)
         edge[pil,->, bend left=45] node[auto] {Poster Idea \pageref{fig:standalone} } (t);
     \end{tikzpicture}~\hspace{-2ex}
-    \includegraphics[width=0.62\textwidth]{standalone.pdf}
+    \includegraphics[width=0.62\textwidth]{./figures/standalone.pdf}
         \caption[Diagrams and plots]{Here we combine a \textbf{Tikz} diagrams and images. We can also compile the figure as separate \textbf{standalone} \index{standalone} pdf and then include it as a graphical element. }  
-      \label{fig:standalone}  
+      \label{fig:standalone}    
  \end{figure}
  
 

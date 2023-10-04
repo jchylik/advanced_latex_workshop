@@ -4,6 +4,7 @@
 
 % --- input -----------------------------------
   \usepackage[utf8]{inputenc}
+  \usepackage[base]{babel} 
 
 % --- math -----------------------------------
   \usepackage{amsmath}
@@ -17,6 +18,7 @@
   % bibliography
   \usepackage[sort,comma]{natbib}
   % settings
+  \usepackage[base]{babel}
   \usepackage{enumitem}
   \usepackage{setspace}
   \usepackage{pdflscape}
@@ -51,7 +53,7 @@
    \usepackage{fancyhdr}
  % ---- fancy page setting -------------- 
    %\input{style_header_footer.tex}
-   \input{style1headerfooter.tex}
+   \input{./latex/style1headerfooter.tex}
   %-----------------------------
   
   % picture libraries
@@ -95,7 +97,7 @@
         Creator={Your Name Here},
         Producer={Institute for Geophysics and Meteorology},
         Subject={Informal LaTeX workshop on intermediate and advanced topics},
-        Keywords={tables, tikz, counters} 
+        Keywords={tables, tikz, counters}  
     },
     %pdfauthor={Author},     % author
     %pdfsubject={Subject},   % subject of the document
@@ -239,7 +241,7 @@ There is an easy way how to create list of figures, tables, as well as index of 
    \label{listings}  
    \chapter*{List of Symbols}
    \addcontentsline{toc}{section}{List of Symbols}
-   \input{./list_symbols.tex}
+   \input{./latex/list_symbols.tex}
 \newpage
 
 \chapter{Monday} \label{chap:monday}
@@ -266,7 +268,7 @@ There is an easy way how to create list of figures, tables, as well as index of 
         edge[pil, <-,bend right=45] (market.west)
         edge[pil,->, bend left=45] node[auto] {Poster Idea (a)} (t);
     \end{tikzpicture}~\hspace{-2ex}
-    \includegraphics[width=0.7\textwidth]{standalone.pdf}
+    \includegraphics[width=0.7\textwidth]{./figures/standalone.pdf}
         \caption[Diagrams and plots]{Here we combine a \textbf{Tikz} diagrams and images. We can also compile the figure as separate \textbf{standalone} \index{standalone} pdf and then include it as a graphical element. }  
       \label{fig:standalone}
  \end{figure}
@@ -296,8 +298,8 @@ How did we suddenly jump from section \ref{sec:figures} to \ref{sec:counters}  ?
  
 
 We will start with:
-%\input{./sillytext1.txt}  
-\input{./sillytext2.txt}
+%\input{./data/sillytext1.txt}  
+\input{./data/sillytext2.txt}
 
 \section{Guidelines}
 To speed up today the progress of the workshop today, the new commands are not only listed in the text but also included as comments. To make the commands actives, just remove or add comment signs.
@@ -382,7 +384,7 @@ With teh package \textbf{listings}, you can show the structured code and highlig
   firstline=368, firstnumber=368, lastline=387, numbers=left, captionpos=b,
   breaklines=true, basicstyle=\scriptsize\color{darkgray}, frame=single,
   keywordstyle=\bf\color{teal}, commentstyle=\it\color{ForestGreen}  % comments in different colour
-]{./day2latex_backup.tex}   % code location
+]{./latex/day2latex_backup.tex}   % code location
 
 \noindent You can try it yourself:
 \begin{enumerate}
@@ -433,7 +435,7 @@ Instead of copy \& paste values into tables, we just read them from an external 
   firstline=438, firstnumber=438, lastline=457, numbers=left, captionpos=b,
   breaklines=true, basicstyle=\scriptsize\color{darkgray}, frame=single,
   keywordstyle=\bf\color{magenta}, commentstyle=\color{olive}  % comments in different colour
-]{./day2latex_backup.tex}   % 
+]{./latex/day2latex_backup.tex}   % 
 
 
 \begin{table}[h!] \label{tab:import}
@@ -447,16 +449,16 @@ Instead of copy \& paste values into tables, we just read them from an external 
           \\
           \hline , 
       table foot = \hline 
-          & \multicolumn{2}{ c|}{\( \ldots \) } 
+          & \multicolumn{2}{ c|}{\( \ldots \) }  
           \\ \hline
-  ]{./values.csv}  % table location
+  ]{data/values.csv}  % table location 
   {  z=\zvec, u=\uvec, u=\thvec    % mapping of columns
   }{%
      \uvec  & \uvec & \thvec        % which columns to show
   } % 
   \caption[short table description]{This is a table imported from the csv file. Apart from that this caption is way to long to be shown in the list of tables. And we will also further style-up the table. }
   \end{center}
-\end{table} ~\vspace{1ex}
+\end{table} ~\vspace{1ex} 
 
 \subsection{Modifying Number Formats}
 
@@ -483,7 +485,7 @@ Instead of copy \& paste values into tables, we just read them from an external 
          \multicolumn{1}{|c|}{\( \ldots \) }
           & \multicolumn{2}{ c|}{\( \ldots \) } 
           \\ \hline
-  ]{values.csv}  % table location
+  ]{./data/values.csv}  % table location
   {  z=\zvec, u=\uvec, theta=\thvec    % mapping of columns
   }{%
      \zvec  & \uvec & \thvec        % which columns to show
@@ -527,7 +529,7 @@ Macros can also take a number of arguments, here for example 3, with the first t
   firstline=140, firstnumber=142, lastline=142, numbers=left, captionpos=b,
   breaklines=true, basicstyle=\scriptsize\color{darkgray}, frame=single,
   keywordstyle=\bf\color{magenta}, commentstyle=\color{olive}  % comments in different colour
-]{./day2latex_backup.tex}   
+]{./latex/day2latex_backup.tex}   
 
 And then you call it:
 \begin{lstlisting}[language={[latex]tex},
