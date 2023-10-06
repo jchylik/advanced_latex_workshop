@@ -4,9 +4,10 @@ This are the files for the LaTeX workshop. It is expected that you have already 
 
 ### Guidelines 
 
-To start with tre training, 
- * Open ["day2latex_v2.tex"](./day2latex_v2.tex "day 2") and compile (with PdfLatex or some built-in command).
+To start with the training, 
+ * Open [day1latex.tex](./day1latex.tex "day1") and compile (with PdfLatex or some built-in command).
  * All the further instructions for the modification of the file are in the compiled document. Follow them.
+ * Once you are finished, continue with [day2latex.tex](./day2latex.tex "day 2") and compile. Again, all the further instructions for the modification of the file are in the compiled document. Follow them.
 
 The example of compiled PDFs are located in the folder [compiled](./compiled "folder with compiled pdfs")
 
