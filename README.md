@@ -2,6 +2,15 @@
 
 This are the files for the LaTeX workshop. It is expected that you have already head some experiences with LaTeX and thus you do not require elementary guidelines.
 
+### Prerequisities
+
+To start with this LaTeX training, you need following:
+* LaTeX compiler (editting online on overleaf is also OK)
+* PDF viewer
+
+Furthermore, for some of the tasks you also need:
+* installed latexdiff
+
 ### Guidelines 
 
 To start with the training, 
