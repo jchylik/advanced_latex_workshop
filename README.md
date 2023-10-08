@@ -1,6 +1,6 @@
-## LaTeX workshop
+## Advanced LaTeX Training
 
-This are the files for the LaTeX workshop. It is expected that you have already head some experiences with LaTeX and thus you do not require elementary guidelines.
+This are the materials for training adavnaced topics in LaTeX.  It is expected that you have already head some experiences with LaTeX and thus you do not require elementary guidelines. 
 
 ### Prerequisities
 
