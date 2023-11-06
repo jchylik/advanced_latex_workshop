@@ -12,7 +12,7 @@
   \usepackage{amstext}
   \usepackage{amssymb}
   \usepackage{amsthm}
-  
+   
 
 % --- graphic and formating ------------------
   % bibliography
@@ -434,7 +434,7 @@ Instead of copy \& paste values into tables, we just read them from an external 
   firstline=438, firstnumber=438, lastline=455, numbers=left, captionpos=b,
   breaklines=true, basicstyle=\scriptsize\color{darkgray}, frame=single,
   keywordstyle=\bf\color{magenta}, commentstyle=\color{olive}  % comments in different colour
-]{./day2latex_backup.tex}   % 
+]{./latex/day2latex_backup.tex}   % 
 \begin{table}[h!] \label{tab:import}
   \begin{center} 
   \csvreader[
@@ -523,7 +523,7 @@ Macros can also take a number of arguments, here for example 3, with the first t
 \refstepcounter{samplecode} 
 \lstinputlisting[ language={[latex]tex},      % tex syntax, latex option
   caption={Macro with arguments (example \alph{samplecode})}, label={code:macroarg}, 
-  firstline=140, firstnumber=142, lastline=142, numbers=left, captionpos=b,
+  firstline=141, firstnumber=141, lastline=143, numbers=left, captionpos=b,
   breaklines=true, basicstyle=\scriptsize\color{darkgray}, frame=single,
   keywordstyle=\bf\color{magenta}, commentstyle=\color{olive}  % comments in different colour
 ]{./latex/day2latex_backup.tex}   
@@ -559,12 +559,12 @@ Not only we can define new macros, but we can \emph{carefully} redefine them usi
 \begin{lstlisting}[language={[latex]tex},
     frame=single,basicstyle=\footnotesize]
     \ifthenelse{\equal{\thing}{\string whatever}}
-  {% True case
-   \newcommand{\result}{thing is `whatever'.}%
-  }
-  {% false case
-   \newcommand{\result}{thing is something else.}%
-  }
+    {% True case
+      \newcommand{\result}{thing is `whatever'.}%
+    }
+    {% false case
+      \newcommand{\result}{thing is something else.}%
+    }
  \end{lstlisting}
  
  We can even use \texttt{foreach} command from the package \texttt{tikz}. This is particularly useful for drawing repeated patterns.
