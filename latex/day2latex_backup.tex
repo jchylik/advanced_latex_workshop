@@ -47,9 +47,9 @@
   \usepackage{colortbl} 
   
 
-   \setlength{\headsep}{16pt}
-%    
-   \usepackage{fancyhdr}
+   \setlength{\headsep}{16pt} 
+%     
+   \usepackage{fancyhdr} 
  % ---- fancy page setting -------------- 
    %\input{./latex/style_header_footer.tex}
    \input{./latex/style1headerfooter.tex}
@@ -122,7 +122,7 @@
     \hypersetup{linkcolor=interlink}}
  
   % ---- math symbols  ----------------------- 
-  \newcommand{\e}{\mathrm{e}}
+  \newcommand{\e}{\mathrm{e}}  
   \newcommand{\dx}{\mathrm{d}}
   \newcommand{\normal}{\mathbi{n}}
   \newcommand{\bsigma}{\mathbf{t}}
@@ -149,8 +149,10 @@
 
   % --- colour definition ------------------
   % colour definition
-  \definecolor{GreenDone}{rgb}{0.2,0.7,0.2}
+  \definecolor{GreenDone}{rgb}{0.2,0.7,0.2} 
   \definecolor{darkred}{rgb}{0.6,0,0}
+  % --- counters -----
+  \newcounter{samplecode}[chapter] 
 
 % \pdfinfo{  % this gets overwrittten by hyperref
 %   /Title    (Advance LaTeX Workshop) 
@@ -161,15 +163,13 @@
 %   /Keywords (listing, tikz, macrtos)
 % }
 \title{Advanced LaTeX Workshop}
-\author{Your Name Here}
+\author{Your Name Here} 
 \date{19 June 2023} 
 %--------------
 \makeindex      % uncomment when making index page
-
-
 \begin{document}
-\newcounter{samplecode}[chapter]
- \thispagestyle{plain}
+% setting counters
+ \thispagestyle{plain} 
  \pagenumbering{roman}  
  \setcounter{page}{1}
 %-------- Workshop overview-------------------------------
@@ -380,10 +380,11 @@ With teh package \textbf{listings}, you can show the structured code and highlig
 \refstepcounter{samplecode} 
 \lstinputlisting[ language={[latex]tex},      % tex syntax, latex option
   caption={Self-showing code (example \Alph{samplecode})}, label={code:thislatex}, 
-  firstline=368, firstnumber=368, lastline=387, numbers=left, captionpos=b,
+  firstline=371, firstnumber=371, lastline=387, numbers=left, captionpos=b,
   breaklines=true, basicstyle=\scriptsize\color{darkgray}, frame=single,
   keywordstyle=\bf\color{magenta}, commentstyle=\color{ForestGreen}  % comments in different colour
-]{./latex/day2latex_backup.tex}   % code location
+]{./day2latex.tex}   % this exact file
+% {day2latex_backup.tex}   % alternative code location
 
 \noindent You can try it yourself:
 \begin{enumerate}
@@ -431,7 +432,7 @@ Instead of copy \& paste values into tables, we just read them from an external 
 \refstepcounter{samplecode} 
 \lstinputlisting[ language={[latex]tex},      % tex syntax, latex option
   caption={Importing from csv file (example \alph{samplecode})}, label={code:csvimport}, 
-  firstline=438, firstnumber=438, lastline=455, numbers=left, captionpos=b,
+  firstline=439, firstnumber=439, lastline=457, numbers=left, captionpos=b,
   breaklines=true, basicstyle=\scriptsize\color{darkgray}, frame=single,
   keywordstyle=\bf\color{magenta}, commentstyle=\color{olive}  % comments in different colour
 ]{./latex/day2latex_backup.tex}   % 
@@ -595,7 +596,7 @@ also in the premable. You can see the result on the following page:
   \end{enumerate}
 
   
-\section{Formatting}
+\section{Formatting} 
 \subsection{Dashes}
 Dash is not the same thing as minus. 
 Lets see the difference between following symbols:\\
