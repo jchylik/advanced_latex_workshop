@@ -185,7 +185,7 @@ You can work from CIP workstation or bring your own device.~\\
 
  \begin{tabular}{l p{0.7\textwidth}}
    target audience: & people with previous experience with \LaTeX \\
-   aims:  & discuss \LaTeX ~topics practise skills \\
+   aims:  & discuss \LaTeX ~topics practice skills \\
    duration: & one and half hour from start time or until you start getting tired \\
    topics: & see following chapters \ref{chap:intro}, \ref{chap:monday}, and \ref{chap:wednesday} \\
    registration: & comment in this Slack thread \\ 
@@ -306,6 +306,7 @@ To speed up today the progress of the workshop today, the new commands are not o
 \section{External tools}
 First we will have a quick look at the \emph{latexdiff} tool from the last time.
 But this time, we will  show its shortomings. First, look at the beginning of today chapter and swap which lines are commented between  \texttt{sillytext1.txt} and \texttt{sillytext2.txt}\\
+
 Secondly, open your shell, change to the folder with this file and type \stepcounter{samplecode} (example \alph{samplecode}): 
 
 \begin{lstlisting}[language={bash}, frame=single,basicstyle=\footnotesize]
@@ -315,7 +316,7 @@ Secondly, open your shell, change to the folder with this file and type \stepcou
 
 and then compile the output file. Does it highlight any differences?\\
 
-Fortunatelly there is a way to show the differences in the included files. Use the option \texttt{--flatten} which merges all the \texttt{input} files before comparing \stepcounter{samplecode} (example \alph{samplecode}):
+Fortunately, there is a way to show the differences in the included files. Use the option \texttt{--flatten} which merges all the \texttt{input} files before comparing \stepcounter{samplecode} (example \alph{samplecode}):
 \begin{lstlisting}[language={bash}, frame=single,basicstyle=\footnotesize]
   latexdiff --flatten  day2latex.tex day2latex_v2.tex > differentshow.tex
 \end{lstlisting}~\vspace{1ex}
@@ -357,8 +358,8 @@ In the header we already inserted \texttt{lipsum} package, and here we insert th
 
 
 \section{Code Listing with Highligths}
-You have already seen example of code listing in the previous paragprahs. Now we will look at this topic in more detail.
-With teh package \textbf{listings}, you can show the structured code and highlight parts of it. The location of the code could be:
+You have already seen example of code listing in the previous paragraphs. Now we will look at this topic in more detail.
+With the package \textbf{listings}, you can show the structured code and highlight parts of it. The location of the code could be:
 \begin{itemize}
  \item Directly copy and paste to the latex document \ref{code:python}.
  \item You point to the source code file.
@@ -395,7 +396,7 @@ With teh package \textbf{listings}, you can show the structured code and highlig
 
 \subsection{Callback to Monday}
 \begin{enumerate} 
- \item Make the symbol after the word ``example'' in \ref{code:thislatex} is consitent with the rest of examples. 
+ \item Make the symbol after the word ``example'' in \ref{code:thislatex} is consistent with the rest of examples. 
  \item Instead of the \emph{listing} counter is starts with the value of the \emph{example} counter, make it that the \emph{example} counter being (re)set to the value of the \emph{listing} counter.
  \item Recompile and look how it appears on the page \pageref{listings}
 \end{enumerate}
@@ -515,11 +516,11 @@ and then just output \( \thml \) by calling the macro:
      \thml
 \end{lstlisting}
 \index{macro@{\bf{macro definition}}}
-Try to define a macro for your favourite math symbol and use it! \\
+Try to define a macro for your favourite colour math symbol and use it! \\
 
 \subsection{Macro Arguments}
 \index{macro!argument}
-Macros can also take a number of arguments, here for example 3, with the first two being optional and predefined. You can see in the preable of this documents:
+Macros can also take a number of arguments, here for example 3, with the first two being optional and predefined. You can see in the preamble of this documents:
 
 \refstepcounter{samplecode} 
 \lstinputlisting[ language={[latex]tex},      % tex syntax, latex option
@@ -577,7 +578,7 @@ To generate it, we need to use the package \texttt{makeidx} in the preamble and 
     frame=single,basicstyle=\footnotesize]
      \makeindex
 \end{lstlisting}
-also in the premable. You can see the result on the following page:
+also in the preamble. You can see the result on the following page:
 
 
 % ---  index--------------
@@ -591,7 +592,7 @@ also in the premable. You can see the result on the following page:
   \subsection{Tasks for the Index}
   \begin{enumerate}
    \item Looks up examples of index entries in this document.
-   \item Add some with subentries. 
+   \item Add some with sub-entries. 
    \item Modify the style of some of them.
   \end{enumerate}
 
