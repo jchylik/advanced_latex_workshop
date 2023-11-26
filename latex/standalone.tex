@@ -1,0 +1,53 @@
+\documentclass{standalone}
+% \usepackage[active]{preview}
+%1 \usepackage[active,tightpage]{preview}
+%\PreviewEnvironment{lstlisting}
+%\PreviewEnvironment{graphicx}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{geometry}
+% picture libraries
+\usepackage{tikz} % Required for flow chart
+   \usetikzlibrary{shapes,arrows} % Tikz libraries required for the flow chart in the template
+   
+%\geometry{
+% paperwidth=20cm,
+% paperheight=22cm,
+% margin=0.1cm
+%}
+  % --- colour definition ------------------
+  % colour definition
+  \definecolor{GreenDone}{rgb}{0.2,0.7,0.2}
+  \definecolor{lightorange}{rgb}{0.9,0.4,0}
+  \definecolor{lightestorange}{rgb}{1,0.8,0.5}
+  \definecolor{darkorange}{rgb}{0.2,0.1,0}
+  \definecolor{interlink}{rgb}{0.6,0,0}
+  \definecolor{DarkCite}{rgb}{0,0.3,0}
+  % \definecolor{ref_out}{rgb}{0.3,0.3,0}
+  \definecolor{ref_out}{rgb}{0.6,0,0}
+  \definecolor{lightyellow}{rgb}{0.99,0.99,0.4}
+  \definecolor{UeaBlue}{RGB}{0,76,103}
+  \definecolor{LightBlue}{RGB}{20,20,250}
+  \definecolor{DarkBlue}{RGB}{15,10,100}  
+  \definecolor{figlink}{RGB}{45,10,120} 
+  \definecolor{bordercol}{RGB}{40,40,40}
+  \definecolor{headercol1}{RGB}{186,215,230}
+  \definecolor{headercol2}{RGB}{0,76,103}
+  \definecolor{headerfontcol}{RGB}{0,0,0}
+  \definecolor{boxcolor}{RGB}{186,215,230}
+
+
+%1 \setlength{\PreviewBorder}{2pt}%
+\setlength{\unitlength}{1mm}
+
+\begin{document}
+%\begin{preview} 
+
+\begin{picture}(170,111) %(170,60)
+\put(   -5,   15){ \input{../figures/diagram.tex}}
+%\put(   0,  110){{\large d)}}
+\end{picture}
+
+
+% \end{preview}
+\end{document}

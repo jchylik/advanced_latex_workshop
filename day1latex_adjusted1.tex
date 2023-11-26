@@ -119,7 +119,7 @@ How did we suddenly jump from section \ref{sec:figures} to \ref{sec:counters}  ?
   \subsection{This is Empty Subsection}
 
  \addtocounter{subsection}{3}
- \subsection{Modifying Plots and Schematics}\label{sec:figures}
+ \section{Modifying Plots and Schematics}\label{sec:figures}
   Warning \arabic{warning}:  The figure might be boring.\\
  %\newpage
  %\thispagestyle{empty}
@@ -142,10 +142,52 @@ How did we suddenly jump from section \ref{sec:figures} to \ref{sec:counters}  ?
     \end{tikzpicture}~\hspace{-2ex}
     \includegraphics[width=0.62\textwidth]{./figures/standalone.pdf}
         \caption[Diagrams and plots]{Here we combine a \textbf{Tikz} diagrams and images. We can also compile the figure as separate \textbf{standalone} \index{standalone} pdf and then include it as a graphical element. }  
-      \label{fig:standalone}    
+      \label{fig:figures}    
  \end{figure}
  
+ \subsection{Standalone}
+ \begin{figure}[h!]
+     %\input{./latex/diagram.tex}
+    % ---- directly consrtruction diagram--------------
+      % \begin{center}
+      \tikzstyle{decision} = [diamond, draw, fill=blue!20, text width=8em, text badly centered, node distance=10em, inner sep=0pt]
+      \tikzstyle{block} = [rectangle, draw, fill=blue!20, text width=8em, text centered, rounded corners,node distance=10em ,  minimum height=3em]
+      \tikzstyle{block_done} = [rectangle, draw, fill=GreenDone, text width=8em, text centered, node distance=10em, rounded corners, minimum height=3em]
+      \tikzstyle{block_special} = [rectangle, draw, fill=lightyellow, text width=8em, text centered, node distance=10em, rounded corners, minimum height=3em]
+      \tikzstyle{line} = [draw, -latex']
+      \tikzstyle{cloud} = [draw, ellipse, fill=lightyellow, node distance=8em, minimum height=0ex]
 
+  \begin{tikzpicture}[node distance = 4mm, auto] 
+    \node [block] (intro)  {1. Introduction};
+    \node [block] (theory) at +(8,-0.5) {2. Theory of LEM};
+    \node [block_special] (methods) at +(8,-2.5) {3. General Methodology};
+    \node [block_special] (idealised) at +(6.5,-4.5) {4. Idealised CAO};
+    \node [block_special] (adjusted) at +(6.5,-6.5) {5. Idealised~CAO Adjusted Scenarios};
+    \node [block_special] (case_studies) at +(11.5,-7) {6. Case Studies of Cold-Air Outbreaks};  
+    \node [block_done] (conclusions) at +(0,-8.5) {7. Conclusions};
+    \draw[->,line width=0.8pt] (intro) -- (methods);
+    \draw[->,line width=0.8pt] (theory) -- (methods);
+    \draw[->,line width=0.8pt] (methods) -- (idealised);
+ 
+    \draw[->,line width=0.8pt] (methods) -- (case_studies);
+    \draw[->,line width=0.8pt] (idealised) -- (adjusted);
+    \draw[->,line width=0.8pt] (idealised) -- (conclusions);
+    \draw[->,line width=0.8pt, dashed](intro) -- (conclusions);
+    \draw[-,line width=0.8pt ] (adjusted) -- (6.5, -7.5);
+    \draw[-,line width=0.8pt ] (case_studies) -- (11.5, -8.5);
+    \draw[->,line width=0.8pt ] (6.5, -7.5) -- (conclusions);
+    \draw[->,line width=0.8pt ] (11.5, -8.5) -- (conclusions);
+   \end{tikzpicture}~\hspace{-2ex}
+   \caption{Here we have a Tikz diagram}
+   \label{fig:directly} 
+   \end{figure} 
+    
+    % ---- inserting it from standalone pdf ------------------
+   \begin{figure}[h!]
+    \includegraphics[width=\textwidth]{./latex/standalone.pdf}
+        \caption[Diagrams and plots]{We can also compile the figure as separate \textbf{standalone} \index{standalone} pdf and then include it as a graphical element. }  
+      \label{fig:standalone}
+ \end{figure}
 
  \newpage 
  
