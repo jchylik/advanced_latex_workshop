@@ -72,6 +72,7 @@ The \texttt{input} statement can also work on multiple levels
 
 \subsection{Automatically Generated Lists}\label{sec:automatic}
 There is an easy way how to create list of figures, tables, as well as index of phrases. 
+ See on the following page: 
 
 % We are going to start witth this documet
 %  #1 change the class of document from article to report
@@ -146,6 +147,10 @@ How did we suddenly jump from section \ref{sec:figures} to \ref{sec:counters}  ?
  \end{figure}
  
  \subsection{Standalone}
+ Some journals request you to upload each figure as a separate pdf. However, what can you do figure consists of multiple panels with labels added in LaTeX? No, you do not need to replot the figure, and you do not need to insert the figure as a separate page. Instead you use \textbf{standalone} class to produce a small image in pdf format. See example \texttt{latex/standalone.tex} of such document.\\
+ 
+ Once you compile a standalone document, you can use it as other graphical elements in pdf format. You can as well include it as an image in this document (see example on the next page).
+  
  \begin{figure}[h!]
      %\input{./latex/diagram.tex}
     % ---- directly consrtruction diagram--------------
