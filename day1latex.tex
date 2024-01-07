@@ -14,7 +14,7 @@
   /Creator  (Your Name Here)
   /Producer (InScAPE)
   /Subject  (Intermediate and Advanced LaTeX)
-  /Keywords (listing, tikz, macrtos) 
+  /Keywords (listing, tikz, macros) 
 }
   
 \begin{document}
@@ -99,7 +99,7 @@ There is an easy way how to create list of figures, tables, as well as index of 
 
  \subsection{Modifying Plots and Schematics}\label{sec:figures}
  %\newpage
- %\thispagestyle{empty}
+ %\thispagestyle{empty} 
  \begin{figure}[h!] 
      %\input{./latex/diagram.tex}
       \begin{tikzpicture}[node distance=8mm, auto,]
@@ -155,7 +155,7 @@ Instead of copy \& paste values into tables, we just read them from an external 
         tabular = |r|r|r|, 
         table head  = \hline \( \quad  z \; \lbrack \mathrm{m} \rbrack  \) &  \(  \; \bar{u} \;  \lbrack \mathrm{m\, s}^{-1} \rbrack \)& \(  \quad \quad \Big. \bar{ \theta }  \; \lbrack \mathrm{K} \rbrack \Big. \) \\\hline ,
         table foot = \hline & \multicolumn{2}{ c|}{\( \ldots \) } \\ \hline
-        ]{values.csv}
+        ]{./data/values.csv}
         {z=\zvec, u=\uvec, theta=\thvec}{%
             \zvec  & \uvec & \thvec 
         }% 
