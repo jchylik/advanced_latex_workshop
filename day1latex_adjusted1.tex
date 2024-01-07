@@ -109,17 +109,38 @@ There is an easy way how to create list of figures, tables, as well as index of 
 
  \setcounter{section}{2}
  \setcounter{subsection}{7}
- \subsection{Counters}\label{sec:counters}
-How did we suddenly jump from section \ref{sec:figures} to \ref{sec:counters}  ? We are now in the chapter \arabic{chapter} or \Roman{chapter} in roman numbers.
+ \section{Counters}\label{sec:counters}
+How did we suddenly jump from section \ref{sec:figures} to \ref{sec:counters}  ? We are now in the chapter \arabic{chapter} or \Roman{chapter} in roman numbers.\\
+
+\addtocounter{subsection}{3}
+\subsection{This is Empty Subsection}
+
+\subsection{Modifying counters}
+
+  
+  
+\subsection{Custom Counters}
+Yes, we can also add custom counters, such as numbering of warning messages:\\
 
  \stepcounter{section}
  \stepcounter{warning}
  Warning \arabic{warning}:  No new ideas here.\\
  \stepcounter{warning}
  
-  \subsection{This is Empty Subsection}
+ How have we done this? Firstly, we need to define a new counter
+\begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize]
+  \newcounter{warning}[chapter] 
+\end{lstlisting}
+The first required argument is the name of the counter and the second, optional argument, is when we reset it.
+Afterwards we can set and step up this counter in the same way as for the sections. Outputting the values  of the counters also works the same way as for the sections, we just use the name of the counter:
+\begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize]
+  Warning \arabic{warning}:  No new ideas here.\\
+\end{lstlisting}
 
- \addtocounter{subsection}{3}
+\subsection{Counters Interaction}
+
+
+
  \section{Modifying Plots and Schematics}\label{sec:figures}
   Warning \arabic{warning}:  The figure might be boring.\\
  %\newpage
@@ -196,11 +217,11 @@ How did we suddenly jump from section \ref{sec:figures} to \ref{sec:counters}  ?
 
  \newpage 
  
- \subsection{Customizing Links, References, and Citations}
+ \section{Customizing Links, References, and Citations}
  Such as modifying the style of links to other parts of the same document (\nameref{sec:automatic}) and links to \href{https://geomet.uni-koeln.de/en/}{external websites}.
  
  
- \subsection{Version Control and Comparison}
+ \section{Version Control and Comparison}
  We also look at the external tools such as \texttt{latexdiff} that compares two \LaTeX files, and  \texttt{pdfdiff} that compares \( \ldots \) you know what.  
   
 
