@@ -26,6 +26,8 @@
 
 % \maketitle
  \pagestyle{fancy}
+ \pagenumbering{roman}  
+\setcounter{page}{1}
  
 %-------- Workshop overview-------------------------------
  We are organising an informal \textbf{workshop} on the \textbf{intermediate and advanced topics} in \LaTeX.
@@ -50,8 +52,6 @@ You can work from CIP workstation or bring your own device.~\\
  
 \section{Monday} \label{sec:monday}
 
-\pagenumbering{arabic} 
-\setcounter{page}{1}
 
 
 \subsection{Combining Document from Pieces}
@@ -80,7 +80,7 @@ There is an easy way how to create list of figures, tables, as well as index of 
 
 
  \maketitle
- \pagenumbering{roman}
+ %\pagenumbering{roman}
    \let\clearpage\relax 
    \tableofcontents
     \label{contents}
@@ -91,11 +91,12 @@ There is an easy way how to create list of figures, tables, as well as index of 
     \listoffigures
     \chapter*{List of Symbols}
     \addcontentsline{toc}{section}{List of Symbols}
-    \input{./latex/list_symbols.tex}
+    \input{./latex/list_symbols.tex} 
  \newpage
 
 %\chapter{Monday} 
 
+%\pagenumbering{arabic}
 
  \subsection{Modifying Plots and Schematics}\label{sec:figures}
  %\newpage
@@ -150,8 +151,10 @@ Such as showing a lines from external script or showing the code of this page.
 \subsection{Tables} \label{sec:tables}
 Instead of copy \& paste values into tables, we just read them from an external csv file and format them.  
 
+
+\begin{table}[h]
 \begin{center} 
-\csvreader[
+ \csvreader[
         tabular = |r|r|r|, 
         table head  = \hline \( \quad  z \; \lbrack \mathrm{m} \rbrack  \) &  \(  \; \bar{u} \;  \lbrack \mathrm{m\, s}^{-1} \rbrack \)& \(  \quad \quad \Big. \bar{ \theta }  \; \lbrack \mathrm{K} \rbrack \Big. \) \\\hline ,
         table foot = \hline & \multicolumn{2}{ c|}{\( \ldots \) } \\ \hline
@@ -160,7 +163,10 @@ Instead of copy \& paste values into tables, we just read them from an external 
             \zvec  & \uvec & \thvec 
         }% 
 \end{center} ~\vspace{1ex}
-And the we will further style-up the table. 
+\caption{An example of a table that we will further style-up.}
+\end{table}
+
+%And the we will further style-up the table. 
 
 \subsection{More on Macros} 
  We can define shortcuts for symbols such as \(\thml\), but we can even write conditional statements.
