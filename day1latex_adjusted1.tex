@@ -26,6 +26,9 @@
 
 % \maketitle
  \pagestyle{fancy}
+ \pagenumbering{roman}  
+\setcounter{page}{1}
+
  
 %-------- Workshop overview-------------------------------
  We are organising an informal \textbf{workshop} on the \textbf{intermediate and advanced topics} in \LaTeX.
@@ -50,8 +53,7 @@ You can work from CIP workstation or bring your own device.~\\
  
 \section{Monday} \label{sec:monday}
 
-\pagenumbering{arabic} 
-\setcounter{page}{1}
+
 
 
 \subsection{Combining Document from Pieces}
@@ -107,17 +109,45 @@ There is an easy way how to create list of figures, tables, as well as index of 
 \pagenumbering{arabic}
 \chapter{Monday} 
 
- \setcounter{section}{2}
- \setcounter{subsection}{7}
+ \setcounter{section}{1}
+ %\setcounter{subsection}{7} 
  \section{Counters}\label{sec:counters}
 How did we suddenly jump from section \ref{sec:figures} to \ref{sec:counters}  ? We are now in the chapter \arabic{chapter} or \Roman{chapter} in roman numbers.\\
 
+\subsection{What Counters do}\label{sec:counters}
+To keep track of sections, pages, figures, and other numbered parts of the document, we use \textbf{counters}. We can always ouputs the current value of a counter, for example the section:
+\begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize]
+  We are currently in  the section \arabic{section}.
+\end{lstlisting}
+
+We are currently in  the section \arabic{section}.\\
+
+Some of the previous pages are not numbered in arabic numbers, but in roman numbers. We can get the same format also for section and chapter counters. 
+
+\begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize]
+  We are currently in  subsection \roman{subsection}  % small roman numerals 
+  of section \alph{section}                           % letters
+  of chapter \Roman{chapter}.                         % capital roman numerals
+\end{lstlisting}
+ We are currently in  subsection \roman{subsection}  % small roman numerals 
+  of section \alph{section}                           % letters
+  of chapter \Roman{chapter}.                         % capital roman numerals
+
+
 \addtocounter{subsection}{3}
-\subsection{This is Empty Subsection}
+\subsection{This is Empty Subsection}\label{sec:empty}
 
 \subsection{Modifying counters}
 
-  
+We could see that we have directly jumped from section \ref{sec:counters} to section \ref{sec:empty} and simply skipped the numbers in between.
+How have we done that?
+\begin{lstlisting}[language={[latex]tex},
+frame=single,basicstyle=\footnotesize]
+\addtocounter{subsection}{3}
+\subsection{This is Empty Subsection}  
+\end{lstlisting}
+
+Appart from increasing the counter by command \texttt{ \textbackslash addtocounter}, we cal also just increment the counter by one using \texttt{ \textbackslash stepcounter} or set it to a desired value using \texttt{ \textbackslash setcounter} command. 
   
 \subsection{Custom Counters}
 Yes, we can also add custom counters, such as numbering of warning messages:\\
@@ -125,7 +155,8 @@ Yes, we can also add custom counters, such as numbering of warning messages:\\
  \stepcounter{section}
  \stepcounter{warning}
  Warning \arabic{warning}:  No new ideas here.\\
- \stepcounter{warning}
+ \addtocounter{warning}{4}
+ Warning \arabic{warning}:  Some new ideas here.\\
  
  How have we done this? Firstly, we need to define a new counter
 \begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize]
@@ -137,10 +168,21 @@ Afterwards we can set and step up this counter in the same way as for the sectio
   Warning \arabic{warning}:  No new ideas here.\\
 \end{lstlisting}
 
+\setcounter{section}{\value{warning}}
+
 \subsection{Counters Interaction}
+Now if we consider that the output of a counter is also a value, we can play further tricks. 
+
+Warning \arabic{warning}:  The section now has the same number as this warning. We achieved that by using:\\
+
+\begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize]
+\setcounter{section}{\value{warning}}  % set value to the current  value of another counter 
+\end{lstlisting}
 
 
 
+
+\newpage 
  \section{Modifying Plots and Schematics}\label{sec:figures}
   Warning \arabic{warning}:  The figure might be boring.\\
  %\newpage
