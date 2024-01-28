@@ -92,10 +92,10 @@ There is an easy way how to create list of figures, tables, as well as index of 
     \listoftables    
    \addcontentsline{toc}{section}{List of Figures} 
    \let\clearpage\relax 
-   \listoffigures
+   \listoffigures\label{lof}  
     \chapter*{List of Symbols}
    \addcontentsline{toc}{section}{List of Symbols}
-   \input{./latex/list_symbols.tex}  
+   \input{./latex/list_symbols.tex}    
 % \newpage
 
 \setcounter{chapter}{1}
@@ -108,6 +108,30 @@ There is an easy way how to create list of figures, tables, as well as index of 
 \newcounter{warning}[chapter]
 \pagenumbering{arabic}
 \chapter{Monday} 
+
+\section{Automatically Generated Lists}\label{sec:automatic}
+On the previous pages we can see lists of tables, figures, symbols and abbreviations. The first three of the lists are autmatically generated, using commands:
+
+\begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize]
+  \tableofcontents
+  \listoftables
+  \listoffigures
+\end{lstlisting}
+
+\subsection{Adding Entries to List}
+ Since we want the lists of tables and figures to appear in the table of content, we manually add an entry. The command \texttt{addcontentsline} takes three arguments:
+ \begin{enumerate}[label=\arabic*)]
+  \item Which list we are adding an item into,
+  \item Which kind of item we are adding,
+  \item The text that appear in the list
+ \end{enumerate}
+
+ We have added the list of figures to the table of content (toc) using: 
+ \begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize]
+   \addcontentsline{toc}{section}{List of Figures} 
+   \listoffigures
+\end{lstlisting}
+
 
  \setcounter{section}{1}
  %\setcounter{subsection}{7} 
@@ -133,6 +157,12 @@ Some of the previous pages are not numbered in arabic numbers, but in roman numb
   of section \alph{section}                           % letters
   of chapter \Roman{chapter}.                         % capital roman numerals
 
+  We can also refer to counters in refences. You can see that in the List of figures is a fake figure. This has been created using:
+  
+   \begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize]
+   \addcontentsline{lof}{figure}{ \arabic{chapter}.\arabic{figure}  Fake Figure}
+\end{lstlisting}
+  
 
 \addtocounter{subsection}{3}
 \subsection{This is Empty Subsection}\label{sec:empty}
