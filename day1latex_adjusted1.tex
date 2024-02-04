@@ -1,7 +1,4 @@
 \documentclass[a4paper,10pt]{report} % {article}
-%\documentclass[a4paper,10pt]{scrartcl}
-
-
 \input{./latex/in1header.tex}
 
 \title{Advanced LaTeX Workshop}
@@ -57,10 +54,30 @@ You can work from CIP workstation or bring your own device.~\\
 
 
 \subsection{Combining Document from Pieces}
-Combining documents from multiple files speeds up the editing process, makes collaboration easier, and also lowers the risk of accidentally rewriting something. You can see an example how most of the header of this document is in a separate file.
+Combining documents from multiple files speeds up the editing process, makes collaboration easier, and also lowers the risk of accidentally rewriting something. You can see an example how most of the header of this document is in a separate file.\\
+
+\lstinputlisting[ language={[latex]tex},      % tex syntax, latex option
+  caption={Input statement}, label={code:input}, 
+  firstline=1, firstnumber=1, lastline=3, numbers=left, captionpos=b,
+  frame=single,
+  breaklines=true
+]{./day1latex_adjusted1.tex} 
+
+The input statements could be then again used in the file that was itself inputted:
+
+\lstinputlisting[ language={[latex]tex},      % tex syntax, latex option
+  caption={Input statement inside in1header.tex}, label={code:input2}, 
+  firstline=50, firstnumber=50, lastline=54, numbers=left, captionpos=b,
+  frame=single,
+  basicstyle=\color{cyan},
+  keywordstyle=\color{magenta}, stringstyle=\color{brown},
+  breaklines=true
+]{./latex/in1header.tex} 
+
 % #1 
 To try this, write some dummy text in a separate file and insert is here using the \texttt{input} command:\\
-\input{./data/just2lines.txt}
+\input{./data/just2lines.txt}\\
+
 
 % #2 
 The \texttt{input} statement can also work on multiple levels
