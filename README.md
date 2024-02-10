@@ -1,6 +1,6 @@
 ## Advanced LaTeX Training
 
-This are the materials for training advanced topics in LaTeX. It was originally design for the unofficial "Workshop on intermediate and advance topics in LaTeX" (at the Institut of Geophysics and Meteorology, Univeristy of Cologne). It is expected that you have already head some experiences with LaTeX and thus you do not require elementary guidelines. 
+This are the materials for training advanced topics in LaTeX. It was originally designed for the unofficial "Workshop on intermediate and advance topics in LaTeX", so it is expected that you have already head some experiences with LaTeX and thus you do not require elementary guidelines. 
 
 ### Prerequisities
 
@@ -19,6 +19,11 @@ To start with the training,
  * Once you are finished, continue with [day2latex.tex](./day2latex.tex "day 2") and compile. Again, all the further instructions for the modification of the file are in the compiled document. Follow them.
 
 The example of compiled PDFs are located in the folder [compiled](./compiled "folder with compiled pdfs")
+
+### History
+This workshop was originally designed for the unofficial "Workshop on intermediate and advance topics in LaTeX" for [InScAPE research group](https://atmos.meteo.uni-koeln.de/inscape "website of InScAPE research group") at the [Institut of Geophysics and Meteorology](https://geomet.uni-koeln.de/ "website of Institut of Geophysics and Meteorology"), Univeristy of Cologne. 
+
+Further edits reflect questions that followed after the workshop.
 
 
 
