@@ -106,9 +106,9 @@ There is an easy way how to create list of figures, tables, as well as index of 
    \addcontentsline{toc}{section}{Table of Contents}  
    \let\clearpage\relax
    \addcontentsline{toc}{section}{List of Tables}
-    \listoftables    
-   \addcontentsline{toc}{section}{List of Figures} 
-   \let\clearpage\relax 
+    \listoftables  
+  \let\clearpage\relax
+   \addcontentsline{toc}{section}{List of Figures}  
    \listoffigures\label{lof}  
     \chapter*{List of Symbols}
    \addcontentsline{toc}{section}{List of Symbols}
@@ -149,6 +149,16 @@ On the previous pages we can see lists of tables, figures, symbols and abbreviat
    \listoffigures
 \end{lstlisting}
 
+\subsection{Formatting of Lists}
+
+The list of Tables and the List of Figures are currently each on a separate page, which is bit wasteful. In order to remove the automatic page break, we just add one line : 
+\begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize]
+   \addcontentsline{toc}{section}{List of Tables}
+   \listoftables  
+   \let\clearpage\relax    % removes pagebreak                       
+   \addcontentsline{toc}{section}{List of Figures}  
+   \listoffigures
+\end{lstlisting}
 
  \setcounter{section}{1}
  %\setcounter{subsection}{7} 
@@ -176,8 +186,12 @@ Some of the previous pages are not numbered in arabic numbers, but in roman numb
 
   We can also refer to counters in refences. You can see that in the List of figures is a fake figure. This has been created using:
   
+  \stepcounter{table} 
+  \addcontentsline{lot}{table}{ \arabic{chapter}.\arabic{table}  Fake Table} 
+  
    \begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize]
    \addcontentsline{lof}{figure}{ \arabic{chapter}.\arabic{figure}  Fake Figure}
+   \addcontentsline{lot}{table}{ \arabic{chapter}.\arabic{table}  Fake Table}
 \end{lstlisting}
   
 
