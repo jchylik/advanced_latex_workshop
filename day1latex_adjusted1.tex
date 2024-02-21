@@ -89,7 +89,7 @@ The \texttt{input} statement can also work on multiple levels
 
 
 
-\subsection{Automatically Generated Lists}\label{sec:automatic}
+\subsection{Automatically Generated Lists} %\label{sec:automatic}
 There is an easy way how to create list of figures, tables, as well as index of phrases. 
  See on the following page: 
 
@@ -161,8 +161,8 @@ The list of Tables and the List of Figures are currently each on a separate page
 \end{lstlisting}
 
  \setcounter{section}{1}
- %\setcounter{subsection}{7} 
- \section{Counters}\label{sec:counters}
+ %\setcounter{subsection}{7}  
+ \section{Counters}%\label{sec:counters}
 How did we suddenly jump from section \ref{sec:figures} to \ref{sec:counters}  ? We are now in the chapter \arabic{chapter} or \Roman{chapter} in roman numbers.\\
 
 \subsection{What Counters do}\label{sec:counters}
@@ -248,7 +248,7 @@ Warning \arabic{warning}:  The section now has the same number as this warning. 
   Warning \arabic{warning}:  The figure might be boring.\\
  %\newpage
  %\thispagestyle{empty}
- \begin{figure}[h!]
+ \begin{figure}[!ht] 
      %\input{./latex/diagram.tex}
       \begin{tikzpicture}[node distance=7mm, auto,]
         %nodes
@@ -275,7 +275,7 @@ Warning \arabic{warning}:  The section now has the same number as this warning. 
  
  Once you compile a standalone document, you can use it as other graphical elements in pdf format. You can as well include it as an image in this document (see example on the next page).
   
- \begin{figure}[h!]
+ \begin{figure}[!hb] 
      %\input{./latex/diagram.tex}
     % ---- directly consrtruction diagram--------------
       % \begin{center}
@@ -312,7 +312,7 @@ Warning \arabic{warning}:  The section now has the same number as this warning. 
    \end{figure} 
     
     % ---- inserting it from standalone pdf ------------------
-   \begin{figure}[h!]
+   \begin{figure}[!ht]
     \includegraphics[width=\textwidth]{./latex/standalone.pdf}
         \caption[Diagrams and plots]{We can also compile the figure as separate \textbf{standalone} \index{standalone} pdf and then include it as a graphical element. }  
       \label{fig:standalone}
