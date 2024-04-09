@@ -348,13 +348,14 @@ Unfortunately they are not installed here. But you can try them later:
 
 
 \section{Fillers}
- \subsection{Filler text}
+ \subsection{Filler Text}
  Sometimes we need to test whether the structure of the document and the formatting works. Instead of spending time copying and pasting random stuff, we use the \emph{Lore Ipsum} generator.
 In the header we already inserted \texttt{lipsum} package, and here we insert the following command \stepcounter{samplecode}(example \alph{samplecode}):
 \begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize]
   \lipsum[0-2]    %generates dummy text
 \end{lstlisting}
-%\lipsum[0-2]    % lore ipsum 
+ \subsubsection{Example of Filler Text}
+\lipsum[0-2]    % lore ipsum 
 
 
 \section{Code Listing with Highligths}
@@ -505,8 +506,10 @@ we can define it as a macro (in the preamble of the documents)
 
 \stepcounter{samplecode}(example \alph{samplecode}):
 \begin{lstlisting}[language={[latex]tex},
-    frame=single,basicstyle=\footnotesize]
-      \newcommand{\thml}{                        % macro name 
+    frame=single,basicstyle=\footnotesize,showstringspaces=false, 
+     keywordstyle=\color{magenta}, stringstyle=\color{brown}, commentstyle=\color{ForestGreen}
+    ]
+  \newcommand{\thml}{                            % macro name 
       \theta^{\scriptscriptstyle \mathrm{(ML)}}  % inner code
   }                                              % close brackets
 \end{lstlisting}
@@ -559,7 +562,8 @@ Not only we can define new macros, but we can \emph{carefully} redefine them usi
  
 
 \begin{lstlisting}[language={[latex]tex},
-    frame=single,basicstyle=\footnotesize]
+    frame=single,basicstyle=\footnotesize,showstringspaces=false, 
+     keywordstyle=\color{magenta}, stringstyle=\color{brown}, commentstyle=\color{ForestGreen}]
     \ifthenelse{\equal{\thing}{\string whatever}}
     {% True case
       \newcommand{\result}{thing is `whatever'.}%
