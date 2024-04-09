@@ -240,11 +240,21 @@ Warning \arabic{warning}:  The section now has the same number as this warning. 
 \setcounter{section}{\value{warning}}  % set value to the current  value of another counter 
 \end{lstlisting}
 
+\subsubsection{Exercise:}
+In this small exercise, we are going to add an entry to the table of content that would list the current chapter, section, and the value of the warning counter, for example:\\
+
+\begin{center}
+ 3.5.Exercise answer: number 7 was the latest warning 
+\end{center}
+
+% Solution (shall be removed from the input)
+\addcontentsline{toc}{subsection}{\arabic{chapter}.\arabic{section} the latest warning was number \arabic{warning}}
 
 
 
 \newpage 
  \section{Modifying Plots and Schematics}\label{sec:figures}
+   
   Warning \arabic{warning}:  The figure might be boring.\\
  %\newpage
  %\thispagestyle{empty}
