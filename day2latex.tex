@@ -427,7 +427,7 @@ A better solution is to export the table in a separate file and just input here,
 \end{lstlisting}
 
 \noindent
-But there are even some more comfortable solutions.
+This might seem like a good choice solution t first, but it still means that we need to export the table to latex format every time we change some value in the source data. Would it be perhaps possible do read the values directly from the source file? A short answer is yes: there are even some more comfortable solutions.
 
 \subsection{Importing Tables} \label{sec:tables}
 Instead of copy \& paste values into tables, we just read them from an external csv file and format them.  
@@ -460,6 +460,8 @@ Instead of copy \& paste values into tables, we just read them from an external 
   \caption[short table description]{This is a table imported from the csv file. Apart from that this caption is way to long to be shown in the list of tables. And we will also further style-up the table. }
   \end{center}
 \end{table} ~\vspace{1ex}
+
+Although the code might seem complicated at first 
 
 \subsection{Modifying Number Formats}
 
