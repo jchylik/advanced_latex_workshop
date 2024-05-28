@@ -254,8 +254,8 @@ In this small exercise, we are going to add an entry to the table of content tha
 
 \newpage 
  \section{Modifying Plots and Schematics}\label{sec:figures}
-   
-  Warning \arabic{warning}:  The figure might be boring.\\
+ 
+ Inserting raster images in LaTeX is easy, however things get interesting when we start inserting vectro graphics. Let us haver a look on en example. Warning \arabic{warning}:  The figure might be boring.\\
  %\newpage
  %\thispagestyle{empty}
  \begin{figure}[!ht] 
@@ -279,6 +279,19 @@ In this small exercise, we are going to add an entry to the table of content tha
         \caption[Diagrams and plots]{Here we combine a \textbf{Tikz} diagrams and images. We can also compile the figure as separate \textbf{standalone} \index{standalone} pdf and then include it as a graphical element. }  
       \label{fig:figures}    
  \end{figure}
+ 
+ 
+ \subsection{TikZ}
+ 
+ Figure  \ref{fig:figures} also shows an example of a vector graphics that is defined directly in LaTeX. Out of various available packages, we picked Tikz. In the header of the LaTeX file we should declare which parts of the package we want use:
+  
+ \begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize]
+   \usepackage{tikz} 
+   \usetikzlibrary{arrows,positioning}
+ \end{lstlisting}
+ 
+ Creating the flowchart is relatively simple. We will have a closer look at it later.
+   
  
  \subsection{Standalone}
  Some journals request you to upload each figure as a separate pdf. However, what can you do figure consists of multiple panels with labels added in LaTeX? No, you do not need to replot the figure, and you do not need to insert the figure as a separate page. Instead you use \textbf{standalone} class to produce a small image in pdf format. See example \texttt{latex/standalone.tex} of such document.\\
