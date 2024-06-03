@@ -430,7 +430,7 @@ A better solution is to export the table in a separate file and just input here,
 This might seem like a good choice solution t first, but it still means that we need to export the table to latex format every time we change some value in the source data. Would it be perhaps possible do read the values directly from the source file? A short answer is yes: there are even some more comfortable solutions.
 
 \subsection{Importing Tables} \label{sec:tables}
-Instead of copy \& paste values into tables, we just read them from an external csv file and format them.  
+Instead of copy \& paste values into tables, we just read them from an external \index{csv} csv file and format them.  
 
 \refstepcounter{samplecode} 
 \lstinputlisting[ language={[latex]tex},      % tex syntax, latex option
@@ -585,7 +585,21 @@ To generate it, we need to use the package \texttt{makeidx} in the preamble and 
     frame=single,basicstyle=\footnotesize]
      \makeindex
 \end{lstlisting}
-also in the preamble. You can see the result on the following page:
+also in the preamble.\\
+
+In the body of the document we then place commands \texttt{\textbackslash index} next to relevant occurrences of keywords.\\
+
+For example:
+\refstepcounter{samplecode} 
+\lstinputlisting[ language={[latex]tex},      % tex syntax, latex option
+  caption={Macro with arguments (example \alph{samplecode})}, label={code:macroarg}, 
+  firstline=432, firstnumber=432, lastline=433, numbers=left, captionpos=b,
+  breaklines=true, basicstyle=\scriptsize\color{darkgray}, frame=single,
+  keywordstyle=\bf\color{magenta}, commentstyle=\color{olive}  % comments in different colour
+]{./day2latex.tex} %{./latex/day2latex_backup.tex}   
+
+
+You can see the result on the following page:
 
 
 % ---  index--------------
