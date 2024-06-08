@@ -599,6 +599,15 @@ For example:
 ]{./day2latex.tex} %{./latex/day2latex_backup.tex}   
 
 
+When we want to index a specific combination of words, but group them together on the index page, we separate them by exclamation marks:
+
+\begin{lstlisting}[language={[latex]tex},
+    frame=single,basicstyle=\footnotesize,showstringspaces=false, 
+     keywordstyle=\color{magenta}, stringstyle=\color{brown}, commentstyle=\color{ForestGreen}]
+   \index{macro!argument} 
+   \index{macro!argument!optional} 
+ \end{lstlisting}
+
 You can see the result on the following page:
 
 
