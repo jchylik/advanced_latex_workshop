@@ -149,6 +149,9 @@ On the previous pages we can see lists of tables, figures, symbols and abbreviat
    \listoffigures
 \end{lstlisting}
 
+Similarly to adding to \textbf{toc}(table of content), we can add to the 
+\textbf{lof} (list of figures), \textbf{lot} (list of tables), and possibly other defined lists.   
+
 \subsection{Formatting of Lists}
 
 The list of Tables and the List of Figures are currently each on a separate page, which is bit wasteful. In order to remove the automatic page break, we just add one line : 
@@ -182,9 +185,9 @@ Some of the previous pages are not numbered in arabic numbers, but in roman numb
 \end{lstlisting}
  We are currently in  subsection \roman{subsection}  % small roman numerals 
   of section \alph{section}                           % letters
-  of chapter \Roman{chapter}.                         % capital roman numerals
+  of chapter \Roman{chapter}. \\                      % capital roman numerals
 
-  We can also refer to counters in refences. You can see that in the List of figures is a fake figure. This has been created using:
+  We can also refer to counters in refences. You can see that in the List of figures is a fake figure. This has been created using: 
   
   \stepcounter{table} 
   \addcontentsline{lot}{table}{ \arabic{chapter}.\arabic{table}  Fake Table} 
