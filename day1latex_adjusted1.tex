@@ -262,27 +262,29 @@ In this small exercise, we are going to add an entry to the table of content tha
  %\newpage
  %\thispagestyle{empty}
  \begin{figure}[!ht] 
-     %\input{./latex/diagram.tex}
-      \begin{tikzpicture}[node distance=7mm, auto,]
-        %nodes
-        \node[point] (market) { \nameref{sec:automatic} };
-        \node[point, inner sep=5pt,below=0.5cm of market]
-        (conference) {Conferences (see \ref{sec:automatic})};
-        % We make a dummy figure to make everything look nice.
-        \node[above=of market] (dummy) {};
-        \node[right=of dummy] (t) {Poster template}
-        edge[pil,bend left=45] (market.east) % edges are used to connect two nodes
-        edge[pil, bend left=45] (conference.east); % .east since we want
-                                                    % consistent style
-        \node[left=of dummy] (g) {Feedback}
-        edge[pil, <-,bend right=45] (market.west)
-        edge[pil,->, bend left=45] node[auto] {Poster Idea \pageref{fig:standalone} } (t);
-    \end{tikzpicture}~\hspace{-2ex}
+    \input{./latex/diagram.tex}
     \includegraphics[width=0.62\textwidth]{./figures/standalone.pdf}
-        \caption[Diagrams and plots]{Here we combine a \textbf{Tikz} diagrams and images. We can also compile the figure as separate \textbf{standalone} \index{standalone} pdf and then include it as a graphical element. }  
+        \caption[Diagrams and plots]{Here we combine a \textbf{Tikz} diagrams and images. We can also compile the figure as separate \textbf{standalone} \index{standalone} pdf and then include it as a graphical element. }    
       \label{fig:figures}    
  \end{figure}
  
+ 
+\subsection{Picture}
+
+The figure above is missing labels for some of the panels. Also, we would like to move diagram on the left little bit higher and the one right little bit lower. Instead of opening the figures in some graphical editor, we can perform these tasks LaTeX with the environment \texttt{picture}.
+
+\begin{figure}[h]
+ \begin{picture}(220,180)
+ \put(  0,  20){ \input{./latex/diagram.tex} }
+ \put(160,  0){\includegraphics[width=0.62\textwidth]{./figures/standalone.pdf}}
+ \put(  0,  170){ {\scriptsize a)} }
+\end{picture}
+        \caption[Picture package]{Here we take previous figure and use tha picture environment to improve layout and add labels. }    
+      \label{fig:picture}   
+\end{figure}
+
+
+
  
  \subsection{TikZ}
  
@@ -301,7 +303,7 @@ In this small exercise, we are going to add an entry to the table of content tha
  
  Once you compile a standalone document, you can use it as other graphical elements in pdf format. You can as well include it as an image in this document (see example on the next page).
   
- \begin{figure}[!hb] 
+ \begin{figure}[!h] 
      %\input{./latex/diagram.tex}
     % ---- directly consrtruction diagram--------------
       % \begin{center}

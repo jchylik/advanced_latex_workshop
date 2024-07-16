@@ -1,0 +1,16 @@
+     % tikz diagram
+     \begin{tikzpicture}[node distance=7mm, auto,]
+        %nodes
+        \node[point] (market) { \nameref{sec:automatic} };
+        \node[point, inner sep=5pt,below=0.5cm of market]
+        (conference) {Conferences (see \ref{sec:automatic})};
+        % We make a dummy figure to make everything look nice.
+        \node[above=of market] (dummy) {};
+        \node[right=of dummy] (t) {Poster template}
+        edge[pil,bend left=45] (market.east) % edges are used to connect two nodes
+        edge[pil, bend left=45] (conference.east); % .east since we want
+                                                    % consistent style
+        \node[left=of dummy] (g) {Feedback}
+        edge[pil, <-,bend right=45] (market.west)
+        edge[pil,->, bend left=45] node[auto] {Poster Idea \pageref{fig:standalone} } (t);
+    \end{tikzpicture}~\hspace{-2ex}
