@@ -32,7 +32,7 @@
 Although there are various \LaTeX tutorials and templates floating around, but they often omit some tools and packages that are useful in meteorology and geophysics. The workshop is primary focused on PhD students who are starting to write their thesis, but it is open to other \LaTeX users as well.
  \begin{enumerate}
  \item  Monday 19. June --- from 12:45 in CIP room 
- \item  Wednesday 21. June --- from 15:00 in CIP room
+ \item  Wednesday 21. June --- from 15:00 in CIP room 
 \end{enumerate}
 
 \noindent
@@ -261,6 +261,7 @@ In this small exercise, we are going to add an entry to the table of content tha
  Inserting raster images in LaTeX is easy, however things get interesting when we start inserting vectro graphics. Let us haver a look on en example. Warning \arabic{warning}:  The figure might be boring.\\
  %\newpage
  %\thispagestyle{empty}
+ %--> replace example with figure of radiation?
  \begin{figure}[!ht] 
     \input{./latex/diagram.tex}
     \includegraphics[width=0.62\textwidth]{./figures/standalone.pdf}
@@ -271,20 +272,36 @@ In this small exercise, we are going to add an entry to the table of content tha
  
 \subsection{Picture}
 
-The figure above is missing labels for some of the panels. Also, we would like to move diagram on the left little bit higher and the one right little bit lower. Instead of opening the figures in some graphical editor, we can perform these tasks LaTeX with the environment \texttt{picture}.
-
+The figure above is missing labels for some of the panels. Also, we would like to move diagram on the left little bit higher and the one right little bit lower. Instead of opening the figures in some graphical editor, we can perform these tasks LaTeX with the environment \texttt{picture}. We then encapsule both panels in the environment, and define the coordinates where each panel is located. You can see the result in figure \ref{fig:picture}.
+\begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize, breaklines=true]
 \begin{figure}[h]
- \begin{picture}(220,180)
- \put(  0,  20){ \input{./latex/diagram.tex} }
- \put(160,  0){\includegraphics[width=0.62\textwidth]{./figures/standalone.pdf}}
- \put(  0,  170){ {\scriptsize a)} }
+ \begin{picture}(220,180)              % define the size of the picture 
+ \put(  0,  20){                       % first panel shifted up by 20 (mm, points, etc.)
+     \input{./latex/diagram.tex}       % insert the diagram as first panel
+ }
+ \put(160,  0){                        % first panel shifted right by 160 (mm,
+     \includegraphics[width=0.62\textwidth]{./figures/standalone.pdf}
+ }
+ \put(  0,  170){                      % position of the label for the first panel
+     {\scriptsize a)}                  % label for the first panel 
+ }
+\end{picture} \caption[Picture package]{Here we take ...
+\end{lstlisting}
+\begin{figure}[h]
+ \begin{picture}(220,175)              % define the size of the picture 
+ \put(  0,  20){                       % first panel shifted up by 20 (mm, points, etc.)
+     \input{./latex/diagram.tex}       % insert the diagram as first panel
+ }
+ \put(160,  0){                        % first panel shifted right by 160 (mm,
+     \includegraphics[width=0.62\textwidth]{./figures/standalone.pdf}
+ }
+ \put(  0,  170){                      % position of the label for the first panel
+     {\scriptsize a)}                  % label for the first panel 
+ }
 \end{picture}
-        \caption[Picture package]{Here we take previous figure and use tha picture environment to improve layout and add labels. }    
+        \caption[Picture package]{Here we take previous figure and use the picture environment to improve layout and add labels. }    
       \label{fig:picture}   
 \end{figure}
-
-
-
  
  \subsection{TikZ}
  
