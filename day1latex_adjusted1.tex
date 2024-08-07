@@ -312,8 +312,16 @@ The figure above is missing labels for some of the panels. Also, we would like t
    \usetikzlibrary{arrows,positioning}
  \end{lstlisting}
  
- Creating the flowchart is relatively simple. We will have a closer look at it later.
-   
+ Creating the flowchart is relatively simple. From the broad range of graphical function available in the tikz package, we use nodes and edges. In the text fields in the flowchart we can than use various other latex commands.\\ 
+ We will have a brief look at an example:\\
+ 
+\lstinputlisting[ language={[latex]tex},      % tex syntax, latex option
+  caption={Tikz Latex code for Figure \ref{fig:picture}a }, label={code:thislatex}, 
+  firstline=2, firstnumber=2, % lastline=387,
+  numbers=left, captionpos=b,
+  breaklines=true, basicstyle=\scriptsize\color{darkgray}, frame=single,
+  %keywordstyle=\bf\color{magenta}, commentstyle=\color{ForestGreen}  % comments in different colour
+]{./latex/diagram.tex}
  
  \subsection{Standalone}
  Some journals request you to upload each figure as a separate pdf. However, what can you do figure consists of multiple panels with labels added in LaTeX? No, you do not need to replot the figure, and you do not need to insert the figure as a separate page. Instead you use \textbf{standalone} class to produce a small image in pdf format. See example \texttt{latex/standalone.tex} of such document.\\
