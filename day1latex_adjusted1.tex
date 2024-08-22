@@ -247,7 +247,7 @@ Warning \arabic{warning}:  The section now has the same number as this warning. 
 In this small exercise, we are going to add an entry to the table of content that would list the current chapter, section, and the value of the warning counter, for example:\\
 
 \begin{center}
- 3.5.Exercise answer: number 7 was the latest warning 
+ 3.5.Exercise answer: number 7 was the latest wazrning 
 \end{center}
 
 % Solution (shall be removed from the input)
@@ -263,40 +263,43 @@ In this small exercise, we are going to add an entry to the table of content tha
  %\thispagestyle{empty}
  %--> replace example with figure of radiation?
  \begin{figure}[!ht] 
-    \input{./latex/diagram.tex}
-    \includegraphics[width=0.62\textwidth]{./figures/standalone.pdf}
+         \input{./latex/diagram.tex}       % insert the diagram as first panel
+     \includegraphics[width=0.52\textwidth]{./figures/prof_tend.pdf}
         \caption[Diagrams and plots]{Here we combine a \textbf{Tikz} diagrams and images. We can also compile the figure as separate \textbf{standalone} \index{standalone} pdf and then include it as a graphical element. }    
       \label{fig:figures}    
  \end{figure}
  
- 
 \subsection{Picture}
-
-The figure above is missing labels for some of the panels. Also, we would like to move diagram on the left little bit higher and the one right little bit lower. Instead of opening the figures in some graphical editor, we can perform these tasks LaTeX with the environment \texttt{picture}. We then encapsule both panels in the environment, and define the coordinates where each panel is located. You can see the result in figure \ref{fig:picture}.
+The figure above is missing labels for some of the panels. Also, we would like to move diagram on the left little bit higher and the one right little bit lower. Instead of opening the figures in some graphical editor, we can perform these tasks LaTeX with the environment \texttt{picture}. We then encapsule both panels in the environment, and define the coordinates where each panel is located. You can see the result in figure \ref{fig:picture}. 
 \begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize, breaklines=true]
-\begin{figure}[h]
  \begin{picture}(220,180)              % define the size of the picture 
  \put(  0,  20){                       % first panel shifted up by 20 (mm, points, etc.)
      \input{./latex/diagram.tex}       % insert the diagram as first panel
  }
  \put(160,  0){                        % first panel shifted right by 160 (mm,
-     \includegraphics[width=0.62\textwidth]{./figures/standalone.pdf}
+     \includegraphics[width=\textwidth]{./figures/prof_tend.pdf} 
  }
  \put(  0,  170){                      % position of the label for the first panel
      {\scriptsize a)}                  % label for the first panel 
+ }
+ \put(185,  170){                     % position of the label for the second panel
+     {\scriptsize b)}                  % label for the second panel 
  }
 \end{picture} \caption[Picture package]{Here we take ...
 \end{lstlisting}
 \begin{figure}[h]
- \begin{picture}(220,175)              % define the size of the picture 
+ \begin{picture}(240,175)              % define the size of the picture 
  \put(  0,  20){                       % first panel shifted up by 20 (mm, points, etc.)
      \input{./latex/diagram.tex}       % insert the diagram as first panel
  }
- \put(160,  0){                        % first panel shifted right by 160 (mm,
-     \includegraphics[width=0.62\textwidth]{./figures/standalone.pdf}
+ \put(170,  0){                        % first panel shifted right by 160 (mm,
+     \includegraphics[width=0.52\textwidth]{./figures/prof_tend.pdf}
  }
  \put(  0,  170){                      % position of the label for the first panel
      {\scriptsize a)}                  % label for the first panel 
+ }
+  \put(185,  170){                     % position of the label for the second panel
+     {\scriptsize b)}                  % label for the second panel 
  }
 \end{picture}
         \caption[Picture package]{Here we take previous figure and use the picture environment to improve layout and add labels. }    
@@ -339,27 +342,7 @@ The figure above is missing labels for some of the panels. Also, we would like t
       \tikzstyle{line} = [draw, -latex']
       \tikzstyle{cloud} = [draw, ellipse, fill=lightyellow, node distance=8em, minimum height=0ex]
 
-  \begin{tikzpicture}[node distance = 4mm, auto] 
-    \node [block] (intro)  {1. Introduction};
-    \node [block] (theory) at +(8,-0.5) {2. Theory of LEM};
-    \node [block_special] (methods) at +(8,-2.5) {3. General Methodology};
-    \node [block_special] (idealised) at +(6.5,-4.5) {4. Idealised CAO};
-    \node [block_special] (adjusted) at +(6.5,-6.5) {5. Idealised~CAO Adjusted Scenarios};
-    \node [block_special] (case_studies) at +(11.5,-7) {6. Case Studies of Cold-Air Outbreaks};  
-    \node [block_done] (conclusions) at +(0,-8.5) {7. Conclusions};
-    \draw[->,line width=0.8pt] (intro) -- (methods);
-    \draw[->,line width=0.8pt] (theory) -- (methods);
-    \draw[->,line width=0.8pt] (methods) -- (idealised);
- 
-    \draw[->,line width=0.8pt] (methods) -- (case_studies);
-    \draw[->,line width=0.8pt] (idealised) -- (adjusted);
-    \draw[->,line width=0.8pt] (idealised) -- (conclusions);
-    \draw[->,line width=0.8pt, dashed](intro) -- (conclusions);
-    \draw[-,line width=0.8pt ] (adjusted) -- (6.5, -7.5);
-    \draw[-,line width=0.8pt ] (case_studies) -- (11.5, -8.5);
-    \draw[->,line width=0.8pt ] (6.5, -7.5) -- (conclusions);
-    \draw[->,line width=0.8pt ] (11.5, -8.5) -- (conclusions);
-   \end{tikzpicture}~\hspace{-2ex}
+      \input{./latex/flowchart.tex}
    \caption{Here we have a Tikz diagram}
    \label{fig:directly} 
    \end{figure} 
