@@ -81,13 +81,20 @@
    \usepackage{lipsum}    % filler text
    
    
-  \hypersetup{
+  %\hypersetup{
     % bookmarks=false,         % show bookmarks bar?https://www.overleaf.com/project/637266f5927ea984e19f515e
     % unicode=false,          % non-Latin characters in Acrobat’s bookmarks
     % pdftoolbar=false,        % show Acrobat’s toolbar?
     % pdfmenubar=false,        % show Acrobat’s menu?
 %     % pdffitwindow=false,     % window fit to page when opened
-    % pdfstartview={FitH},    % fits the width of the page to the window
+    % pdfstartview={FitH},    % fits the width of the page to the window 
+    %pdfauthor={Author},     % author
+    %pdfsubject={Subject},   % subject of the document
+    %pdfcreator={Creator},   % creator of the document
+    %pdfproducer={Producer}, % producer of the document
+    %pdfkeywords={keyword1, key2, key3}, % list of keywords
+    % pdfnewwindow=true,      % links in new PDF window
+  \hypersetup{
     pdfinfo={
         Title={Informal LaTeX workshop},
         Author={InScAPE group},
@@ -96,20 +103,14 @@
         Subject={Informal LaTeX workshop on intermediate and advanced topics},
         Keywords={tables, tikz, counters}
     },
-    %pdfauthor={Author},     % author
-    %pdfsubject={Subject},   % subject of the document
-    %pdfcreator={Creator},   % creator of the document
-    %pdfproducer={Producer}, % producer of the document
-    %pdfkeywords={keyword1, key2, key3}, % list of keywords
-    % pdfnewwindow=true,      % links in new PDF window
-    colorlinks=true,       % false: boxed links; true: colored links
-    linkcolor= ref_out,          % color of internal links (change box color with linkbordercolor)
-    linkbordercolor = red, %
-    urlbordercolor = {0 0.6 1},   % 
-    citecolor=green,        % color of links to bibliography
-    filecolor=cyan,         % color of file links
-    urlcolor=magenta       % color of external links
-    % pdfborderstyle={/S/U/W 1}% border style will be underline of width 1pt
+    colorlinks=true,            % false: boxed links; true: colored links
+    linkcolor= ref_out,         % color of internal links (change box color with linkbordercolor)
+    linkbordercolor = red,      % color of box around links
+    urlbordercolor = {0 0.6 1}, % 
+    citecolor=green,            % color of links to bibliography
+    filecolor=cyan,             % color of file links
+    urlcolor=magenta            % color of external links
+    % pdfborderstyle={/S/U/W 1} % border style will be underline of width 1pt
 } 
 
 % ---- new commands --------------------------

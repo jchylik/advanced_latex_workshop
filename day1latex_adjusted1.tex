@@ -357,11 +357,21 @@ The figure above is missing labels for some of the panels. Also, we would like t
  \newpage 
  
  \section{Customizing Links, References, and Citations}
- Such as modifying the style of links to other parts of the same document (\nameref{sec:automatic}) and links to \href{https://geomet.uni-koeln.de/en/}{external websites}.\\
+ Such as modifying the style of links to other parts of the same document (\nameref{sec:automatic}) and links to \href{https://geomet.uni-koeln.de/en/}{external websites}, as well as links to file such as this document \href{./day1latex.pdf}{./day1latex.pdf}.\\
  
  As you can see in the previous paragraph, we can set different formatting to different types of links. In order to achieve that, we need to include in the header first the package \texttt{hyperref} and then set up options using the command
- \texttt{\textbackslash hypersetup}.\\
+ \texttt{\textbackslash hypersetup} in the header of the \LaTeX document:\\
  
+ \lstinputlisting[ language={[latex]tex},      % tex syntax, latex option
+  caption={hypersetup inside in1header.tex}, label={code:hyper}, 
+  firstline=97, firstnumber=97, lastline=114, numbers=left, captionpos=b,
+  frame=single,
+  basicstyle=\footnotesize,
+  keywordstyle=\color{magenta}, stringstyle=\color{brown},
+  breaklines=true
+]{./latex/in1header.tex} 
+ 
+ \pagebreak
  
  \section{Version Control and Comparison}
  We also look at the external tools such as \texttt{latexdiff} that compares two \LaTeX files, and  \texttt{pdfdiff} that compares \( \ldots \) you know what.  
