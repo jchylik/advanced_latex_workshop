@@ -26,6 +26,7 @@
  \pagenumbering{roman}  
 \setcounter{page}{1}
 
+ \section*{Overview}
  
 %-------- Workshop overview-------------------------------
  We are organising an informal \textbf{workshop} on the \textbf{intermediate and advanced topics} in \LaTeX.
@@ -270,7 +271,7 @@ In this small exercise, we are going to add an entry to the table of content tha
  \end{figure}
  
 \subsection{Picture}
-The figure above is missing labels for some of the panels. Also, we would like to move diagram on the left little bit higher and the one right little bit lower. Instead of opening the figures in some graphical editor, we can perform these tasks LaTeX with the environment \texttt{picture}. We then encapsule both panels in the environment, and define the coordinates where each panel is located. You can see the result in figure \ref{fig:picture}. 
+The figure above is missing labels for some of the panels. Also, we would like to move diagram on the left little bit higher and the one right little bit lower. Instead of opening the figures in some graphical editor, we can perform these tasks \LaTeX with the environment \texttt{picture}. We then encapsule both panels in the environment, and define the coordinates where each panel is located. You can see the result in figure \ref{fig:picture}. 
 \begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize, breaklines=true]
  \begin{picture}(220,180)              % define the size of the picture 
  \put(  0,  20){                       % first panel shifted up by 20 (mm, points, etc.)
@@ -357,7 +358,7 @@ The figure above is missing labels for some of the panels. Also, we would like t
  \newpage 
  
  \section{Customizing Links, References, and Citations}
- Such as modifying the style of links to other parts of the same document (\nameref{sec:automatic}) and links to \href{https://geomet.uni-koeln.de/en/}{external websites}, as well as links to file such as this document \href{./day1latex.pdf}{./day1latex.pdf}.\\
+ So far all the references to the figures, sections, pages, and other counters were marked by brick-red colour of the text. Could we change this style? Not only we can modify the text style of link, the styles can even vary, such as modifying the style of links to other parts of the same document (\nameref{sec:automatic}) and links to \href{https://geomet.uni-koeln.de/en/}{external websites}, as well as links to file such as this document \href{./day1latex.pdf}{./day1latex.pdf}.\\
  
  As you can see in the previous paragraph, we can set different formatting to different types of links. In order to achieve that, we need to include in the header first the package \texttt{hyperref} and then set up options using the command
  \texttt{\textbackslash hypersetup} in the header of the \LaTeX document:\\
