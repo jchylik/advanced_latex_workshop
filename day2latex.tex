@@ -246,51 +246,11 @@ There is an easy way how to create list of figures, tables, as well as index of 
 \chapter{Monday} \label{chap:monday}
  \pagenumbering{arabic}
  \pagestyle{fancy}
-
- \section{Modifying Plots and Schematics}\label{sec:figures}
- %\newpage
- %\thispagestyle{empty}
- \begin{figure}[h!]
-     %\input{./latex/diagram.tex}
-      \begin{tikzpicture}[node distance=8mm, auto,]
-        %nodes
-        \node[point] (market) {users (b)};
-        \node[point, inner sep=5pt,below=0.5cm of market]
-        (conference) {Conferences (c)};
-        % We make a dummy figure to make everything look nice.
-        \node[above=of market] (dummy) {};
-        \node[right=of dummy] (t) {Poster template}
-        edge[pil,bend left=45] (market.east) % edges are used to connect two nodes
-        edge[pil, bend left=45] (conference.east); % .east since we want
-                                                    % consistent style
-        \node[left=of dummy] (g) {Feedback}
-        edge[pil, <-,bend right=45] (market.west)
-        edge[pil,->, bend left=45] node[auto] {Poster Idea (a)} (t);
-    \end{tikzpicture}~\hspace{-2ex}
-    \includegraphics[width=0.7\textwidth]{./figures/standalone.pdf}
-        \caption[Diagrams and plots]{Here we combine a \textbf{Tikz} diagrams and images. We can also compile the figure as separate \textbf{standalone} \index{standalone} pdf and then include it as a graphical element. }  
-      \label{fig:standalone}
- \end{figure}
  
- %\setcounter{subsection}{7}
- \section{Counters}\label{sec:counters}
-How did we suddenly jump from section \ref{sec:figures} to \ref{sec:counters}  ?
+ The topics covered on Monday are in a separate document \href{./day1latex.pdf}{day1latex.pdf}
 
  \newpage 
  
- \section{Customizing Links, References, and Citations}
- Such as modifying the style of links to other parts of the same document (\nameref{sec:automatic}) and links to \href{https://geomet.uni-koeln.de/en/}{external websites}.
- 
- 
- \section{Version Control and Comparison}
- We also look at the \index{tool!external} external tools such as \texttt{latexdiff} that compares two \LaTeX files, and  \texttt{pdfdiff} that compares \( \ldots \) you know what.  
-  
-
-
-  
-  
-  
-  
   
 \chapter{Wednesday} \label{chap:wednesday}
 
@@ -592,7 +552,7 @@ In the body of the document we then place commands \texttt{\textbackslash index}
 For example:
 \refstepcounter{samplecode} 
 \lstinputlisting[ language={[latex]tex},      % tex syntax, latex option
-  caption={Macro with arguments (example \alph{samplecode})}, label={code:macroarg}, 
+  caption={Macro with arguments (example \alph{samplecode})}, label={code:index}, 
   firstline=432, firstnumber=432, lastline=433, numbers=left, captionpos=b,
   breaklines=true, basicstyle=\scriptsize\color{darkgray}, frame=single,
   keywordstyle=\bf\color{magenta}, commentstyle=\color{olive}  % comments in different colour
