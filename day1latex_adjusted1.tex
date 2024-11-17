@@ -259,14 +259,14 @@ In this small exercise, we are going to add an entry to the table of content tha
 \newpage 
  \section{Modifying Plots and Schematics}\label{sec:figures}
  
- Inserting raster images in LaTeX is easy, however things get interesting when we start inserting vectro graphics. Let us haver a look on en example. Warning \arabic{warning}:  The figure might be boring.\\
+ Inserting raster images in LaTeX is easy, however things get interesting when we start inserting vectro graphics. Let us haver a look on en example (Figure \ref{fig:figures}). Warning \arabic{warning}:  The figure might be boring.\\
  %\newpage
  %\thispagestyle{empty}
  %--> replace example with figure of radiation?
  \begin{figure}[!ht] 
          \input{./latex/diagram.tex}       % insert the diagram as first panel
      \includegraphics[width=0.52\textwidth]{./figures/prof_tend.pdf}
-        \caption[Diagrams and plots]{Here we combine a \textbf{Tikz} diagrams and images.}    
+        \caption[Diagrams and plots]{Here we combine a \textbf{Tikz} diagrams and images. Note that there the references withtin the diagram include active hyeprlinks to other part of this document.}    
       \label{fig:figures}    
  \end{figure}
  
