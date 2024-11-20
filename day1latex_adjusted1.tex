@@ -316,7 +316,7 @@ The figure above is missing labels for some of the panels. Also, we would like t
    \usetikzlibrary{arrows,positioning}
  \end{lstlisting}
  
- Creating the flowchart is relatively simple. From the broad range of graphical function available in the tikz package, we use nodes and edges. In the text fields in the flowchart we can than use various other latex commands.\\ 
+ Creating the flowchart is relatively simple. From the broad range of graphical function available in the tikz package, we use nodes and edges. In the text fields in the flowchart we can than use various other \LaTeX commands.\\ 
  We will have a brief look at an example:\\
  
 \lstinputlisting[ language={[latex]tex},      % tex syntax, latex option
@@ -378,7 +378,7 @@ The figure above is missing labels for some of the panels. Also, we would like t
  \section{Version Control and Comparison}
  We also look at the external tools such as \texttt{latexdiff} that compares \LaTeX files and  \texttt{pdfdiff} that compares \( \ldots \) you know what.\\
  
- Latexdiff can be run as shell command. The arguments are two latex files, and the output is \LaTeX code which clearly marks which lines of the document differ between the files and which ones are the same. We can redirect the output to a new file.
+ Latexdiff can be run as shell command. The arguments are two \LaTeX files, and the output is \LaTeX code which clearly marks which lines of the document differ between the files and which ones are the same. We can redirect the output to a new file.
  
  \begin{lstlisting}[language={bash}, frame=single,basicstyle=\footnotesize]
   latexdiff day1latex.tex day1latex_adjusted1.tex > differences_day1latex.tex

@@ -298,7 +298,7 @@ Go ahead and give it a try \stepcounter{samplecode} (example \alph{samplecode}):
 
 \subsection{Other tools}
 
-There are a couple of other tools that can speed up your work with latex.
+There are a couple of other tools that can speed up your work with .
 Unfortunately they are not installed here. But you can try them later:
 \begin{itemize}
     \item \emph{pdfgrep} --- similar to grep, searches inside a PDF document that was already compiled; See: \href{https://www.geeksforgeeks.org/pdfgrep-command-in-linux/}{tutorial},  \href{https://pdfgrep.org/doc.html}{man page}
@@ -322,7 +322,7 @@ In the header we already inserted \texttt{lipsum} package, and here we insert th
 You have already seen example of code listing in the previous paragraphs. Now we will look at this topic in more detail.
 With the package \textbf{listings}, you can show the structured code and highlight parts of it. The location of the code could be:
 \begin{itemize}
- \item Directly copy and paste to the latex document --- see listing \ref{code:python}.
+ \item Directly copy and paste to the \LaTeX document --- see listing \ref{code:python}.
  \item You point to the source code file 
  \begin{itemize}
   \item[\(\circ\)] You juts need to state the path to the file and the lines to list
@@ -376,7 +376,7 @@ With the package \textbf{listings}, you can show the structured code and highlig
 
 \section{Tables}
 
-Sometimes we directly write a table in the latex document. But sometimes we need values from and external file. Shall we just copy and paste them?~\vspace{2ex}\\
+Sometimes we directly write a table in the \LaTeX document. But sometimes we need values from and external file. Shall we just copy and paste them?~\vspace{2ex}\\
 Sure, if you want to risk messing up the whole document and losing the newest values.~\vspace{2ex}
 
 \noindent
@@ -387,7 +387,7 @@ A better solution is to export the table in a separate file and just input here,
 \end{lstlisting}
 
 \noindent
-This might seem like a good choice solution t first, but it still means that we need to export the table to latex format every time we change some value in the source data. Would it be perhaps possible do read the values directly from the source file? A short answer is yes: there are even some more comfortable solutions.
+This might seem like a good choice solution t first, but it still means that we need to export the table to \LaTeX format every time we change some value in the source data. Would it be perhaps possible do read the values directly from the source file? A short answer is yes: there are even some more comfortable solutions.
 
 \subsection{Importing Tables} \label{sec:tables}
 Instead of copy \& paste values into tables, we just read them from an external \index{csv} csv file and format them.  
