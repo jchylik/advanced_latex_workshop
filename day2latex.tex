@@ -309,7 +309,7 @@ Unfortunately they are not installed here. But you can try them later:
 
 \section{Fillers}
  \subsection{Filler Text}
- Sometimes we need to test whether the structure of the document and the formatting works. Instead of spending time copying and pasting random stuff, we use the \emph{Lore Ipsum} generator.
+ Sometimes we need to test whether the structure of the document and the formatting works. Instead of spending time copying and pasting random stuff, we use the \index{filler!lore ipsum} \emph{Lore Ipsum} generator.
 In the header we already inserted \texttt{lipsum} package, and here we insert the following command \stepcounter{samplecode}(example \alph{samplecode}):
 \begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize]
   \lipsum[0-2]    %generates dummy text
@@ -322,7 +322,7 @@ In the header we already inserted \texttt{lipsum} package, and here we insert th
 You have already seen example of code listing in the previous paragraphs. Now we will look at this topic in more detail.
 With the package \textbf{listings}, you can show the structured code and highlight parts of it. The location of the code could be:
 \begin{itemize}
- \item Directly copy and paste to the \LaTeX document --- see listing \ref{code:python}.
+ \item Directly copy and paste to the \LaTeX  document --- see listing \ref{code:python}.
  \item You point to the source code file 
  \begin{itemize}
   \item[\(\circ\)] You juts need to state the path to the file and the lines to list
@@ -351,7 +351,7 @@ With the package \textbf{listings}, you can show the structured code and highlig
 
 \noindent You can try it yourself:
 \begin{enumerate}
- \item Change colour which highlights keywords.
+ \item Change colour which highlights keywords. \index{code!highlight}
  \item Change the comments fonts to italics (hint: \texttt{\textbackslash it})
  \item Adjust the path to the code so it is listing part of this file that your are working on.
 \end{enumerate}
@@ -465,7 +465,7 @@ We can very much speedup work in \LaTeX with macros --- simple scripts and alias
 
 If we repeatedly write a complicate math expression or symbol, such as
 \[ \theta^{\scriptscriptstyle \mathrm{(ML)}} =  \]
-we can define it as a macro (in the preamble of the documents)
+we can define \index{macro!definition} it as a macro (in the preamble of the documents)
 
 \stepcounter{samplecode}(example \alph{samplecode}):
 \begin{lstlisting}[language={[latex]tex},
@@ -511,7 +511,7 @@ Let us play with this macro: \index{macro!argument!optional}
 \end{enumerate}
 
 \subsection{Redefing Macros}
-Not only we can define new macros, but we can \emph{carefully} redefine them using the \texttt{\textbackslash renewcommand}.\\
+Not only we can define new macros, but we can \emph{carefully} redefine \index{macro!definition!redefine}them using the \texttt{\textbackslash renewcommand}.\\
 
 \begin{enumerate}
  \item Look at the title at the page \pageref{contents}
