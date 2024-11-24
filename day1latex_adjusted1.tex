@@ -153,6 +153,19 @@ On the previous pages we can see lists of tables, figures, symbols and abbreviat
 Similarly to adding to \textbf{toc}(table of content), we can add to the 
 \textbf{lof} (list of figures), \textbf{lot} (list of tables), and possibly other defined lists.   
 
+  \subsection{Force Adding Entries to Lists}
+  Soemtimes we are faced with a situation that figure would be inserted as a separate page afterwards, or that we want to refer to a figure in the chapter that has not yet been written. Instead of compiling the document with multiple warnings or errors, we can force add enties into the tavle of content, table of lists, etc.\\
+  
+  You can see that in the List of figures is a non-existent figure called "Figure to be added later". This has been created using: 
+  
+  \stepcounter{table} 
+  \addcontentsline{lot}{table}{ \arabic{chapter}.\arabic{table}  Fake Table} 
+  
+   \begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize]
+   \addcontentsline{lof}{figure}{ \arabic{chapter}.\arabic{figure} Figure to be added later}
+   \addcontentsline{lot}{table}{ \arabic{chapter}.\arabic{table}  Fake Table}
+\end{lstlisting}
+
 \subsection{Formatting of Lists}
 
 The list of Tables and the List of Figures are currently each on a separate page, which is bit wasteful. In order to remove the automatic page break, we just add one line : 
@@ -188,15 +201,8 @@ Some of the previous pages are not numbered in arabic numbers, but in roman numb
   of section \alph{section}                           % letters
   of chapter \Roman{chapter}. \\                      % capital roman numerals
 
-  We can also refer to counters in refences. You can see that in the List of figures is a fake figure. This has been created using: 
+  We can also refer to counters in refences. 
   
-  \stepcounter{table} 
-  \addcontentsline{lot}{table}{ \arabic{chapter}.\arabic{table}  Fake Table} 
-  
-   \begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize]
-   \addcontentsline{lof}{figure}{ \arabic{chapter}.\arabic{figure}  Fake Figure}
-   \addcontentsline{lot}{table}{ \arabic{chapter}.\arabic{table}  Fake Table}
-\end{lstlisting}
   
 
 \addtocounter{subsection}{3}
