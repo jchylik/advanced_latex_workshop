@@ -315,7 +315,7 @@ In the header we already inserted \texttt{lipsum} package, and here we insert th
   \lipsum[0-2]    %generates dummy text
 \end{lstlisting}
  \subsubsection{Example of Filler Text}
-\lipsum[0-2]    % lore ipsum 
+\lipsum[0-1]    % lore ipsum 
 
 
 \section{Code Listing with Highligths}
@@ -325,28 +325,42 @@ With the package \textbf{listings}, you can show the structured code and highlig
  \item Directly copy and paste to the \LaTeX  document --- see listing \ref{code:python}.
  \item You point to the source code file 
  \begin{itemize}
-  \item[\(\circ\)] You juts need to state the path to the file and the lines to list
+  \item[\(\circ\)] You juts need to state the path to the file and which lines to list
   \item[\(\circ\)] You can event point to the source code of this very file (see \ref{code:thislatex}).
  \end{itemize}
 \end{itemize}
 
 \setcounter{lstlisting}{\value{samplecode}}
 \refstepcounter{samplecode}
-\begin{lstlisting}[language={python},caption={Copy and paste code (example \alph{samplecode})},label={code:python}, 
-     frame=single, captionpos=b, basicstyle=\footnotesize\color{cyan},showstringspaces=false, 
-     keywordstyle=\color{magenta}, stringstyle=\color{brown}, commentstyle=\color{ForestGreen} 
-     ]
- lname = "LaTeX"     # strings brown, comments in dark green
- print("Do you sometimes use {} to generate {} files?".format("Python",lname))
-\end{lstlisting}
+\begin{lstlisting}[language={python}       % listing: python code
+   ,caption={Copy and paste a few lines of python code (example \alph{samplecode})}
+   ,label={code:python} 
+   ,frame=single, captionpos=b              % simple frame and caption below
+   ,showstringspaces=false                  % how to display strings
+   ,basicstyle=\footnotesize\color{cyan}    % setting font
+   ,keywordstyle=\color{magenta}            % setting font for keywords 
+   ,stringstyle=\color{brown}
+   ,commentstyle=\color{ForestGreen} 
+  ]
+ langs = ["Python","Bash","Matlab","R"]     # strings brown, comments in dark green
+ pick = random.randint(0, len(langs))       # pick randommly index
+ print("Do you sometimes use {} to generate {} files?".format(langs[pick],"LaTeX")) 
+\end{lstlisting}                            % end of one listing
 
 \refstepcounter{samplecode} 
-\lstinputlisting[ language={[latex]tex},      % tex syntax, latex option
-  caption={Self-showing code (example \Alph{samplecode}) with higligthed syntex and line numbers}, label={code:thislatex}, 
-  firstline=371, firstnumber=371, lastline=387, numbers=left, captionpos=b,
-  breaklines=true, basicstyle=\scriptsize\color{darkgray}, frame=single,
-  keywordstyle=\bf\color{magenta}, commentstyle=\color{ForestGreen}  % comments in different colour
-]{./latex/day2latex_backup.tex} %{./day2latex.tex}   % this exact file
+\lstinputlisting[ language={[latex]tex}     % new listing: tex syntax, latex option
+  ,caption={Self-showing code (example \Alph{samplecode}) with higligthed syntex and line numbers}
+  ,label={code:thislatex}
+  ,firstline=335                            % where in the file to start
+  ,firstnumber=335                          % adjusting the shown numbers
+  ,lastline=363                             % what is the last line
+  ,numbers=left
+  ,captionpos=b, breaklines=true
+  ,frame=single
+  ,basicstyle=\scriptsize\color{darkgray}   % setting smaller font
+  ,keywordstyle=\bf\color{magenta}
+  ,commentstyle=\color{ForestGreen}         % comments in different colour
+]{./day2latex.tex}                          % this exact file
 % {./latex/day2latex_backup.tex}   % alternative code location
 
 \noindent You can try it yourself:
