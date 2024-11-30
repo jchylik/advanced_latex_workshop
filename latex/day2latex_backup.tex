@@ -151,6 +151,7 @@
   % colour definition
   \definecolor{GreenDone}{rgb}{0.2,0.7,0.2} 
   \definecolor{darkred}{rgb}{0.6,0,0}
+  \definecolor{darorange}{rgb}{0.6,0.2,0}
   % --- counters -----
   \newcounter{samplecode}[chapter] 
 
@@ -185,7 +186,7 @@ You can work from CIP workstation or bring your own device.~\\
 
  \begin{tabular}{l p{0.7\textwidth}}
    target audience: & people with previous experience with \LaTeX \\
-   aims:  & discuss \LaTeX ~topics practise skills \\
+   aims:  & discuss \LaTeX ~topics practice skills \\
    duration: & one and half hour from start time or until you start getting tired \\
    topics: & see following chapters \ref{chap:intro}, \ref{chap:monday}, and \ref{chap:wednesday} \\
    registration: & comment in this Slack thread \\ 
@@ -246,51 +247,11 @@ There is an easy way how to create list of figures, tables, as well as index of 
 \chapter{Monday} \label{chap:monday}
  \pagenumbering{arabic}
  \pagestyle{fancy}
-
- \section{Modifying Plots and Schematics}\label{sec:figures}
- %\newpage
- %\thispagestyle{empty}
- \begin{figure}[h!]
-     %\input{./latex/diagram.tex}
-      \begin{tikzpicture}[node distance=8mm, auto,]
-        %nodes
-        \node[point] (market) {users (b)};
-        \node[point, inner sep=5pt,below=0.5cm of market]
-        (conference) {Conferences (c)};
-        % We make a dummy figure to make everything look nice.
-        \node[above=of market] (dummy) {};
-        \node[right=of dummy] (t) {Poster template}
-        edge[pil,bend left=45] (market.east) % edges are used to connect two nodes
-        edge[pil, bend left=45] (conference.east); % .east since we want
-                                                    % consistent style
-        \node[left=of dummy] (g) {Feedback}
-        edge[pil, <-,bend right=45] (market.west)
-        edge[pil,->, bend left=45] node[auto] {Poster Idea (a)} (t);
-    \end{tikzpicture}~\hspace{-2ex}
-    \includegraphics[width=0.7\textwidth]{./figures/standalone.pdf}
-        \caption[Diagrams and plots]{Here we combine a \textbf{Tikz} diagrams and images. We can also compile the figure as separate \textbf{standalone} \index{standalone} pdf and then include it as a graphical element. }  
-      \label{fig:standalone}
- \end{figure}
  
- %\setcounter{subsection}{7}
- \section{Counters}\label{sec:counters}
-How did we suddenly jump from section \ref{sec:figures} to \ref{sec:counters}  ?
+ The topics covered on Monday are in a separate document \href{./day1latex.pdf}{day1latex.pdf}
 
  \newpage 
  
- \section{Customizing Links, References, and Citations}
- Such as modifying the style of links to other parts of the same document (\nameref{sec:automatic}) and links to \href{https://geomet.uni-koeln.de/en/}{external websites}.
- 
- 
- \section{Version Control and Comparison}
- We also look at the \index{tool!external} external tools such as \texttt{latexdiff} that compares two \LaTeX files, and  \texttt{pdfdiff} that compares \( \ldots \) you know what.  
-  
-
-
-  
-  
-  
-  
   
 \chapter{Wednesday} \label{chap:wednesday}
 
@@ -306,17 +267,32 @@ To speed up today the progress of the workshop today, the new commands are not o
 \section{External tools}
 First we will have a quick look at the \emph{latexdiff} tool from the last time.
 But this time, we will  show its shortomings. First, look at the beginning of today chapter and swap which lines are commented between  \texttt{sillytext1.txt} and \texttt{sillytext2.txt}\\
+
 Secondly, open your shell, change to the folder with this file and type \stepcounter{samplecode} (example \alph{samplecode}): 
 
-\begin{lstlisting}[language={bash}, frame=single,basicstyle=\footnotesize]
+\begin{lstlisting}[language={bash}
+   ,frame=single                           % simple frame 
+   ,showstringspaces=false                  % how to display strings
+   ,basicstyle=\footnotesize\color{cyan}    % setting font
+   ,keywordstyle=\color{magenta}            % setting font for keywords 
+   ,stringstyle=\color{brown}
+   ,commentstyle=\color{ForestGreen} 
+]
   latexdiff day2latex.tex day2latex_v2.tex > different.tex
 \end{lstlisting}~\vspace{1ex}
 \stepcounter{samplecode}
 
 and then compile the output file. Does it highlight any differences?\\
 
-Fortunatelly there is a way to show the differences in the included files. Use the option \texttt{--flatten} which merges all the \texttt{input} files before comparing \stepcounter{samplecode} (example \alph{samplecode}):
-\begin{lstlisting}[language={bash}, frame=single,basicstyle=\footnotesize]
+Fortunately, there is a way to show the differences in the included files. Use the option \texttt{--flatten} which merges all the \texttt{input} files before comparing \stepcounter{samplecode} (example \alph{samplecode}):
+\begin{lstlisting}[language={bash}
+   ,frame=single                           % simple frame 
+   ,showstringspaces=false                  % how to display strings
+   ,basicstyle=\footnotesize\color{cyan}    % setting font
+   ,keywordstyle=\color{magenta}            % setting font for keywords 
+   ,stringstyle=\color{brown}
+   ,commentstyle=\color{ForestGreen} 
+]
   latexdiff --flatten  day2latex.tex day2latex_v2.tex > differentshow.tex
 \end{lstlisting}~\vspace{1ex}
 
@@ -331,13 +307,20 @@ And with the option \texttt{--type}, we can also define how the changes appear. 
 
 Go ahead and give it a try \stepcounter{samplecode} (example \alph{samplecode}):
 
-\begin{lstlisting}[language={bash}, frame=single,basicstyle=\footnotesize]
+\begin{lstlisting}[language={bash}
+   ,frame=single                           % simple frame 
+   ,showstringspaces=false                  % how to display strings
+   ,basicstyle=\footnotesize\color{cyan}    % setting font
+   ,keywordstyle=\color{magenta}            % setting font for keywords 
+   ,stringstyle=\color{brown}
+   ,commentstyle=\color{ForestGreen} 
+]
   latexdiff --flatten --type=PDFCOMMENT day2latex.tex day2latex_v2.tex > differentcom.tex
 \end{lstlisting}~\vspace{0ex}
 
 \subsection{Other tools}
 
-There are a couple of other tools that can speed up your work with latex.
+There are a couple of other tools that can speed up your work with .
 Unfortunately they are not installed here. But you can try them later:
 \begin{itemize}
     \item \emph{pdfgrep} --- similar to grep, searches inside a PDF document that was already compiled; See: \href{https://www.geeksforgeeks.org/pdfgrep-command-in-linux/}{tutorial},  \href{https://pdfgrep.org/doc.html}{man page}
@@ -347,55 +330,71 @@ Unfortunately they are not installed here. But you can try them later:
 
 
 \section{Fillers}
- \subsection{Filler text}
- Sometimes we need to test whether the structure of the document and the formatting works. Instead of spending time copying and pasting random stuff, we use the \emph{Lore Ipsum} generator.
+ \subsection{Filler Text}
+ Sometimes we need to test whether the structure of the document and the formatting works. Instead of spending time copying and pasting random stuff, we use the \index{filler!lore ipsum} \emph{Lore Ipsum} generator.
 In the header we already inserted \texttt{lipsum} package, and here we insert the following command \stepcounter{samplecode}(example \alph{samplecode}):
 \begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize]
   \lipsum[0-2]    %generates dummy text
 \end{lstlisting}
-%\lipsum[0-2]    % lore ipsum 
+ \subsubsection{Example of Filler Text}
+\lipsum[0-1]    % lore ipsum 
 
 
 \section{Code Listing with Highligths}
-You have already seen example of code listing in the previous paragprahs. Now we will look at this topic in more detail.
-With teh package \textbf{listings}, you can show the structured code and highlight parts of it. The location of the code could be:
+You have already seen example of code listing in the previous paragraphs. Now we will look at this topic in more detail.
+With the package \textbf{listings}, you can show the structured code and highlight parts of it. The location of the code could be:
 \begin{itemize}
- \item Directly copy and paste to the latex document \ref{code:python}.
- \item You point to the source code file.
+ \item Directly copy and paste to the \LaTeX  document --- see listing \ref{code:python}.
+ \item You point to the source code file 
  \begin{itemize}
+  \item[\(\circ\)] You juts need to state the path to the file and which lines to list
   \item[\(\circ\)] You can event point to the source code of this very file (see \ref{code:thislatex}).
  \end{itemize}
 \end{itemize}
 
 \setcounter{lstlisting}{\value{samplecode}}
 \refstepcounter{samplecode}
-\begin{lstlisting}[language={python},caption={Copy and paste code (example \alph{samplecode})},label={code:python}, 
-     frame=single, captionpos=b, basicstyle=\footnotesize\color{cyan},showstringspaces=false, 
-     keywordstyle=\color{magenta}, stringstyle=\color{brown}, commentstyle=\color{ForestGreen} 
-     ]
- lname = "LaTeX"     # strings brown, comments in dark green
- print("Do you sometimes use {} to generate {} files?".format("Python",lname))
-\end{lstlisting}
+\begin{lstlisting}[language={python}       % listing: python code
+   ,caption={Copy and paste a few lines of python code (example \alph{samplecode})}
+   ,label={code:python} 
+   ,frame=single, captionpos=b              % simple frame and caption below
+   ,showstringspaces=false                  % how to display strings
+   ,basicstyle=\footnotesize\color{cyan}    % setting font
+   ,keywordstyle=\color{magenta}            % setting font for keywords 
+   ,stringstyle=\color{brown}
+   ,commentstyle=\color{ForestGreen} 
+  ]
+ langs = ["Python","Bash","Matlab","R"]     # strings brown, comments in dark green
+ pick = random.randint(0, len(langs))       # pick random index
+ print("Do you sometimes use {} to generate {} files?".format(langs[pick],"LaTeX")) 
+\end{lstlisting}                            % end of one listing
 
 \refstepcounter{samplecode} 
-\lstinputlisting[ language={[latex]tex},      % tex syntax, latex option
-  caption={Self-showing code (example \Alph{samplecode})}, label={code:thislatex}, 
-  firstline=371, firstnumber=371, lastline=387, numbers=left, captionpos=b,
-  breaklines=true, basicstyle=\scriptsize\color{darkgray}, frame=single,
-  keywordstyle=\bf\color{magenta}, commentstyle=\color{ForestGreen}  % comments in different colour
-]{./day2latex.tex}   % this exact file
-% {day2latex_backup.tex}   % alternative code location
+\lstinputlisting[ language={[latex]tex}     % new listing: tex syntax, latex option
+  ,caption={Self-showing code (example \Alph{samplecode}) with higligthed syntex and line numbers}
+  ,label={code:thislatex}
+  ,firstline=357                            % where in the file to start
+  ,firstnumber=357                          % adjusting the shown numbers
+  ,lastline=385                             % what is the last line
+  ,numbers=left
+  ,captionpos=b, breaklines=true
+  ,frame=single
+  ,basicstyle=\scriptsize\color{darkgray}   % setting smaller font
+  ,keywordstyle=\bf\color{magenta}
+  ,commentstyle=\color{ForestGreen}         % comments in different colour
+]{./day2latex.tex}                          % this exact file
+% {./latex/day2latex_backup.tex}   % alternative code location
 
 \noindent You can try it yourself:
 \begin{enumerate}
- \item Change colour which highlights keywords.
+ \item Change colour which highlights keywords. \index{code!highlight}
  \item Change the comments fonts to italics (hint: \texttt{\textbackslash it})
  \item Adjust the path to the code so it is listing part of this file that your are working on.
 \end{enumerate}
 
 \subsection{Callback to Monday}
 \begin{enumerate} 
- \item Make the symbol after the word ``example'' in \ref{code:thislatex} is consitent with the rest of examples. 
+ \item Make the symbol after the word ``example'' in \ref{code:thislatex} is consistent with the rest of examples. 
  \item Instead of the \emph{listing} counter is starts with the value of the \emph{example} counter, make it that the \emph{example} counter being (re)set to the value of the \emph{listing} counter.
  \item Recompile and look how it appears on the page \pageref{listings}
 \end{enumerate}
@@ -413,7 +412,7 @@ With teh package \textbf{listings}, you can show the structured code and highlig
 
 \section{Tables}
 
-Sometimes we directly write a table in the latex document. But sometimes we need values from and external file. Shall we just copy and paste them?~\vspace{2ex}\\
+Sometimes we directly write a table in the \LaTeX document. But sometimes we need values from and external file. Shall we just copy and paste them?~\vspace{2ex}\\
 Sure, if you want to risk messing up the whole document and losing the newest values.~\vspace{2ex}
 
 \noindent
@@ -424,18 +423,20 @@ A better solution is to export the table in a separate file and just input here,
 \end{lstlisting}
 
 \noindent
-But there are even some more comfortable solutions.
+This might seem like a good choice solution t first, but it still means that we need to export the table to \LaTeX format every time we change some value in the source data. Would it be perhaps possible do read the values directly from the source file? A short answer is yes: there are even some more comfortable solutions.
 
 \subsection{Importing Tables} \label{sec:tables}
-Instead of copy \& paste values into tables, we just read them from an external csv file and format them.  
+Instead of copy \& paste values into tables, we just read them from an external \index{csv} csv file and format them.  
 
 \refstepcounter{samplecode} 
 \lstinputlisting[ language={[latex]tex},      % tex syntax, latex option
   caption={Importing from csv file (example \alph{samplecode})}, label={code:csvimport}, 
-  firstline=439, firstnumber=439, lastline=457, numbers=left, captionpos=b,
+  firstline=440, firstnumber=440, lastline=460, numbers=left, captionpos=b,
   breaklines=true, basicstyle=\scriptsize\color{darkgray}, frame=single,
   keywordstyle=\bf\color{magenta}, commentstyle=\color{olive}  % comments in different colour
 ]{./latex/day2latex_backup.tex}   % 
+
+
 \begin{table}[h!] \label{tab:import}
   \begin{center} 
   \csvreader[
@@ -457,6 +458,8 @@ Instead of copy \& paste values into tables, we just read them from an external 
   \caption[short table description]{This is a table imported from the csv file. Apart from that this caption is way to long to be shown in the list of tables. And we will also further style-up the table. }
   \end{center}
 \end{table} ~\vspace{1ex}
+
+Although the code might seem complicated at first 
 
 \subsection{Modifying Number Formats}
 
@@ -500,12 +503,14 @@ We can very much speedup work in \LaTeX with macros --- simple scripts and alias
 
 If we repeatedly write a complicate math expression or symbol, such as
 \[ \theta^{\scriptscriptstyle \mathrm{(ML)}} =  \]
-we can define it as a macro (in the preamble of the documents)
+we can define \index{macro!definition} it as a macro (in the preamble of the documents)
 
 \stepcounter{samplecode}(example \alph{samplecode}):
 \begin{lstlisting}[language={[latex]tex},
-    frame=single,basicstyle=\footnotesize]
-      \newcommand{\thml}{                        % macro name 
+    frame=single,basicstyle=\footnotesize,showstringspaces=false, 
+     keywordstyle=\color{magenta}, stringstyle=\color{brown}, commentstyle=\color{ForestGreen}
+    ]
+  \newcommand{\thml}{                            % macro name 
       \theta^{\scriptscriptstyle \mathrm{(ML)}}  % inner code
   }                                              % close brackets
 \end{lstlisting}
@@ -515,11 +520,11 @@ and then just output \( \thml \) by calling the macro:
      \thml
 \end{lstlisting}
 \index{macro@{\bf{macro definition}}}
-Try to define a macro for your favourite math symbol and use it! \\
+Try to define a macro for your favourite colour math symbol and use it! \\
 
 \subsection{Macro Arguments}
 \index{macro!argument}
-Macros can also take a number of arguments, here for example 3, with the first two being optional and predefined. You can see in the preable of this documents:
+Macros can also take a number of arguments, here for example 3, with the first two being optional and predefined. You can see in the preamble of this documents:
 
 \refstepcounter{samplecode} 
 \lstinputlisting[ language={[latex]tex},      % tex syntax, latex option
@@ -544,7 +549,7 @@ Let us play with this macro: \index{macro!argument!optional}
 \end{enumerate}
 
 \subsection{Redefing Macros}
-Not only we can define new macros, but we can \emph{carefully} redefine them using the \texttt{\textbackslash renewcommand}.\\
+Not only we can define new macros, but we can \emph{carefully} redefine \index{macro!definition!redefine}them using the \texttt{\textbackslash renewcommand}.\\
 
 \begin{enumerate}
  \item Look at the title at the page \pageref{contents}
@@ -558,7 +563,8 @@ Not only we can define new macros, but we can \emph{carefully} redefine them usi
  
 
 \begin{lstlisting}[language={[latex]tex},
-    frame=single,basicstyle=\footnotesize]
+    frame=single,basicstyle=\footnotesize,showstringspaces=false, 
+     keywordstyle=\color{magenta}, stringstyle=\color{brown}, commentstyle=\color{ForestGreen}]
     \ifthenelse{\equal{\thing}{\string whatever}}
     {% True case
       \newcommand{\result}{thing is `whatever'.}%
@@ -577,7 +583,30 @@ To generate it, we need to use the package \texttt{makeidx} in the preamble and 
     frame=single,basicstyle=\footnotesize]
      \makeindex
 \end{lstlisting}
-also in the premable. You can see the result on the following page:
+also in the preamble.\\
+
+In the body of the document we then place commands \texttt{\textbackslash index} next to relevant occurrences of keywords.\\
+
+For example:
+\refstepcounter{samplecode} 
+\lstinputlisting[ language={[latex]tex},      % tex syntax, latex option
+  caption={Macro with arguments (example \alph{samplecode})}, label={code:index}, 
+  firstline=432, firstnumber=432, lastline=433, numbers=left, captionpos=b,
+  breaklines=true, basicstyle=\scriptsize\color{darkgray}, frame=single,
+  keywordstyle=\bf\color{magenta}, commentstyle=\color{olive}  % comments in different colour
+]{./day2latex.tex} %{./latex/day2latex_backup.tex}   
+
+
+When we want to index a specific combination of words, but group them together on the index page, we separate them by exclamation marks:
+
+\begin{lstlisting}[language={[latex]tex},
+    frame=single,basicstyle=\footnotesize,showstringspaces=false, 
+     keywordstyle=\color{magenta}, stringstyle=\color{brown}, commentstyle=\color{ForestGreen}]
+   \index{macro!argument} 
+   \index{macro!argument!optional} 
+ \end{lstlisting}
+
+You can see the result on the following page:
 
 
 % ---  index--------------
@@ -591,7 +620,7 @@ also in the premable. You can see the result on the following page:
   \subsection{Tasks for the Index}
   \begin{enumerate}
    \item Looks up examples of index entries in this document.
-   \item Add some with subentries. 
+   \item Add some with sub-entries. 
    \item Modify the style of some of them.
   \end{enumerate}
 

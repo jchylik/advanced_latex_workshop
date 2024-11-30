@@ -151,6 +151,7 @@
   % colour definition
   \definecolor{GreenDone}{rgb}{0.2,0.7,0.2} 
   \definecolor{darkred}{rgb}{0.6,0,0}
+  \definecolor{darorange}{rgb}{0.6,0.2,0}
   % --- counters -----
   \newcounter{samplecode}[chapter] 
 
@@ -269,7 +270,14 @@ But this time, we will  show its shortomings. First, look at the beginning of to
 
 Secondly, open your shell, change to the folder with this file and type \stepcounter{samplecode} (example \alph{samplecode}): 
 
-\begin{lstlisting}[language={bash}, frame=single,basicstyle=\footnotesize]
+\begin{lstlisting}[language={bash}
+   ,frame=single                           % simple frame 
+   ,showstringspaces=false                  % how to display strings
+   ,basicstyle=\footnotesize\color{cyan}    % setting font
+   ,keywordstyle=\color{magenta}            % setting font for keywords 
+   ,stringstyle=\color{brown}
+   ,commentstyle=\color{ForestGreen} 
+]
   latexdiff day2latex.tex day2latex_v2.tex > different.tex
 \end{lstlisting}~\vspace{1ex}
 \stepcounter{samplecode}
@@ -277,7 +285,14 @@ Secondly, open your shell, change to the folder with this file and type \stepcou
 and then compile the output file. Does it highlight any differences?\\
 
 Fortunately, there is a way to show the differences in the included files. Use the option \texttt{--flatten} which merges all the \texttt{input} files before comparing \stepcounter{samplecode} (example \alph{samplecode}):
-\begin{lstlisting}[language={bash}, frame=single,basicstyle=\footnotesize]
+\begin{lstlisting}[language={bash}
+   ,frame=single                           % simple frame 
+   ,showstringspaces=false                  % how to display strings
+   ,basicstyle=\footnotesize\color{cyan}    % setting font
+   ,keywordstyle=\color{magenta}            % setting font for keywords 
+   ,stringstyle=\color{brown}
+   ,commentstyle=\color{ForestGreen} 
+]
   latexdiff --flatten  day2latex.tex day2latex_v2.tex > differentshow.tex
 \end{lstlisting}~\vspace{1ex}
 
@@ -292,7 +307,14 @@ And with the option \texttt{--type}, we can also define how the changes appear. 
 
 Go ahead and give it a try \stepcounter{samplecode} (example \alph{samplecode}):
 
-\begin{lstlisting}[language={bash}, frame=single,basicstyle=\footnotesize]
+\begin{lstlisting}[language={bash}
+   ,frame=single                           % simple frame 
+   ,showstringspaces=false                  % how to display strings
+   ,basicstyle=\footnotesize\color{cyan}    % setting font
+   ,keywordstyle=\color{magenta}            % setting font for keywords 
+   ,stringstyle=\color{brown}
+   ,commentstyle=\color{ForestGreen} 
+]
   latexdiff --flatten --type=PDFCOMMENT day2latex.tex day2latex_v2.tex > differentcom.tex
 \end{lstlisting}~\vspace{0ex}
 
@@ -343,7 +365,7 @@ With the package \textbf{listings}, you can show the structured code and highlig
    ,commentstyle=\color{ForestGreen} 
   ]
  langs = ["Python","Bash","Matlab","R"]     # strings brown, comments in dark green
- pick = random.randint(0, len(langs))       # pick randommly index
+ pick = random.randint(0, len(langs))       # pick random index
  print("Do you sometimes use {} to generate {} files?".format(langs[pick],"LaTeX")) 
 \end{lstlisting}                            % end of one listing
 
@@ -351,9 +373,9 @@ With the package \textbf{listings}, you can show the structured code and highlig
 \lstinputlisting[ language={[latex]tex}     % new listing: tex syntax, latex option
   ,caption={Self-showing code (example \Alph{samplecode}) with higligthed syntex and line numbers}
   ,label={code:thislatex}
-  ,firstline=335                            % where in the file to start
-  ,firstnumber=335                          % adjusting the shown numbers
-  ,lastline=363                             % what is the last line
+  ,firstline=357                            % where in the file to start
+  ,firstnumber=357                          % adjusting the shown numbers
+  ,lastline=385                             % what is the last line
   ,numbers=left
   ,captionpos=b, breaklines=true
   ,frame=single
@@ -409,10 +431,12 @@ Instead of copy \& paste values into tables, we just read them from an external 
 \refstepcounter{samplecode} 
 \lstinputlisting[ language={[latex]tex},      % tex syntax, latex option
   caption={Importing from csv file (example \alph{samplecode})}, label={code:csvimport}, 
-  firstline=439, firstnumber=439, lastline=457, numbers=left, captionpos=b,
+  firstline=440, firstnumber=440, lastline=460, numbers=left, captionpos=b,
   breaklines=true, basicstyle=\scriptsize\color{darkgray}, frame=single,
   keywordstyle=\bf\color{magenta}, commentstyle=\color{olive}  % comments in different colour
 ]{./latex/day2latex_backup.tex}   % 
+
+
 \begin{table}[h!] \label{tab:import}
   \begin{center} 
   \csvreader[
