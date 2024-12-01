@@ -78,7 +78,9 @@ Combining documents from multiple files speeds up the editing process, makes col
   caption={Input statement}, label={code:input}, 
   firstline=1, firstnumber=1, lastline=3, numbers=left, captionpos=b,
   frame=single,
-  breaklines=true
+  breaklines=true,
+  keywordstyle=\bf,
+  commentstyle=\it\color{gray}
 ]{./day1latex_adjusted1.tex} 
 
 The input statements could be then again used in the file that was itself inputted:
@@ -86,9 +88,9 @@ The input statements could be then again used in the file that was itself inputt
 \lstinputlisting[ language={[latex]tex},      % tex syntax, latex option
   caption={Input statement inside in1header.tex}, label={code:input2}, 
   firstline=50, firstnumber=50, lastline=54, numbers=left, captionpos=b,
-  frame=single,
+  frame=single, 
   basicstyle=\color{cyan},
-  keywordstyle=\color{magenta}, stringstyle=\color{brown},
+  keywordstyle=\color{magenta}, stringstyle=\color{brown}, commentstyle=\color{gray},
   breaklines=true
 ]{./latex/in1header.tex} 
 
@@ -162,7 +164,10 @@ On the previous pages we can see lists of tables, figures, symbols and abbreviat
  \end{enumerate}
 
  We have added the list of figures to the table of content (toc) using: 
- \begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize]
+ \begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize,
+  keywordstyle=\bf,
+  commentstyle=\it\color{gray}
+ ]
    \addcontentsline{toc}{section}{List of Figures} 
    \listoffigures
 \end{lstlisting}
@@ -178,7 +183,10 @@ Similarly to adding to \textbf{toc}(table of content), we can add to the
   \stepcounter{table} 
   \addcontentsline{lot}{table}{ \arabic{chapter}.\arabic{table}  Fake Table} 
   
-   \begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize]
+   \begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize,
+  keywordstyle=\bf,
+  commentstyle=\it\color{gray}
+   ]
    \addcontentsline{lof}{figure}{ \arabic{chapter}.\arabic{figure} Figure to be added later}
    \addcontentsline{lot}{table}{ \arabic{chapter}.\arabic{table}  Fake Table}
 \end{lstlisting}
@@ -186,7 +194,10 @@ Similarly to adding to \textbf{toc}(table of content), we can add to the
 \subsection{Formatting of Lists}
 
 The list of Tables and the List of Figures are currently each on a separate page, which is bit wasteful. In order to remove the automatic page break, we just add one line : 
-\begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize]
+\begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize,
+  keywordstyle=\bf,
+  commentstyle=\it\color{gray}
+  ]
    \addcontentsline{toc}{section}{List of Tables}
    \listoftables  
    \let\clearpage\relax    % removes pagebreak                       
@@ -201,7 +212,10 @@ How did we suddenly jump from section \ref{sec:figures} to \ref{sec:counters}  ?
 
 \subsection{What Counters do}\label{sec:counters}
 To keep track of sections, pages, figures, and other numbered parts of the document, we use \textbf{counters}. We can always ouputs the current value of a counter, for example the section:
-\begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize]
+\begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize,
+  keywordstyle=\bf,
+  commentstyle=\it\color{gray}
+  ]
   We are currently in  the section \arabic{section}.
 \end{lstlisting}
 
@@ -209,7 +223,10 @@ We are currently in  the section \arabic{section}.\\
 
 Some of the previous pages are not numbered in arabic numbers, but in roman numbers. We can get the same format also for section and chapter counters. 
 
-\begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize]
+\begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize,
+  keywordstyle=\bf,
+  commentstyle=\it\color{gray}
+  ]
   We are currently in  subsection \roman{subsection}  % small roman numerals 
   of section \alph{section}                           % letters
   of chapter \Roman{chapter}.                         % capital roman numerals
@@ -230,7 +247,10 @@ Some of the previous pages are not numbered in arabic numbers, but in roman numb
 We could see that we have directly jumped from section \ref{sec:counters} to section \ref{sec:empty} and simply skipped the numbers in between.
 How have we done that?
 \begin{lstlisting}[language={[latex]tex},
-frame=single,basicstyle=\footnotesize]
+frame=single,basicstyle=\footnotesize,
+  keywordstyle=\bf,
+  commentstyle=\it\color{gray}
+  ]
 \addtocounter{subsection}{3}
 \subsection{This is Empty Subsection}  
 \end{lstlisting}
@@ -247,12 +267,18 @@ Yes, we can also add custom counters, such as numbering of warning messages:\\
  Warning \arabic{warning}:  Some new ideas here.\\
  
  How have we done this? Firstly, we need to define a new counter
-\begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize]
+\begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize,
+  keywordstyle=\bf,
+  commentstyle=\it\color{gray}
+  ]
   \newcounter{warning}[chapter] 
 \end{lstlisting}
 The first required argument is the name of the counter and the second, optional argument, is when we reset it.
 Afterwards we can set and step up this counter in the same way as for the sections. Outputting the values  of the counters also works the same way as for the sections, we just use the name of the counter:
-\begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize]
+\begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize,
+  keywordstyle=\bf,
+  commentstyle=\it\color{gray}
+  ]
   Warning \arabic{warning}:  No new ideas here.\\
 \end{lstlisting}
 
@@ -263,7 +289,10 @@ Now if we consider that the output of a counter is also a value, we can play fur
 
 Warning \arabic{warning}:  The section now has the same number as this warning. We achieved that by using:\\
 
-\begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize]
+\begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize,
+  keywordstyle=\bf,
+  commentstyle=\it\color{gray}
+  ]
 \setcounter{section}{\value{warning}}  % set value to the current  value of another counter 
 \end{lstlisting}
 
@@ -295,7 +324,10 @@ In this small exercise, we are going to add an entry to the table of content tha
  
 \subsection{Picture}
 The figure above is missing labels for some of the panels. Also, we would like to move diagram on the left little bit higher and the one right little bit lower. Instead of opening the figures in some graphical editor, we can perform these tasks \LaTeX with the environment \texttt{picture}. We then encapsule both panels in the environment, and define the coordinates where each panel is located. You can see the result in figure \ref{fig:picture}. 
-\begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize, breaklines=true]
+\begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize, breaklines=true,
+  keywordstyle=\bf,
+  commentstyle=\it\color{gray}
+  ]
  \begin{picture}(220,180)              % define the size of the picture 
  \put(  0,  20){                       % first panel shifted up by 20 (mm, points, etc.)
      \input{./latex/diagram.tex}       % insert the diagram as first panel
@@ -334,7 +366,10 @@ The figure above is missing labels for some of the panels. Also, we would like t
  
  Figure  \ref{fig:figures} also shows an example of a vector graphics that is defined directly in LaTeX. Out of various available packages, we picked Tikz. In the header of the LaTeX file we should declare which parts of the package we want use:
   
- \begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize]
+ \begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize,
+  keywordstyle=\bf,
+  commentstyle=\it\color{gray}
+  ]
    \usepackage{tikz} 
    \usetikzlibrary{arrows,positioning}
  \end{lstlisting}
@@ -346,8 +381,10 @@ The figure above is missing labels for some of the panels. Also, we would like t
   caption={Tikz Latex code for Figure \ref{fig:picture}a }, label={code:thislatex}, 
   firstline=2, firstnumber=2, % lastline=387,
   numbers=left, captionpos=b,
-  breaklines=true, basicstyle=\scriptsize\color{darkgray}, frame=single,
-  %keywordstyle=\bf\color{magenta}, commentstyle=\color{ForestGreen}  % comments in different colour
+  breaklines=true, basicstyle=\scriptsize\color{darkgray},
+  keywordstyle=\bf,
+  commentstyle=\it\color{gray},
+  frame=single
 ]{./latex/diagram.tex}
  
  \subsection{Standalone}
@@ -390,8 +427,9 @@ The figure above is missing labels for some of the panels. Also, we would like t
   caption={hypersetup inside in1header.tex}, label={code:hyper}, 
   firstline=97, firstnumber=97, lastline=114, numbers=left, captionpos=b,
   frame=single,
-  basicstyle=\footnotesize,
+  basicstyle=\footnotesize, 
   keywordstyle=\color{magenta}, stringstyle=\color{brown},
+  commentstyle=\it\color{gray},
   breaklines=true
 ]{./latex/in1header.tex} 
  
@@ -403,7 +441,12 @@ The figure above is missing labels for some of the panels. Also, we would like t
  
  Latexdiff can be run as shell command. The arguments are two \LaTeX files, and the output is \LaTeX code which clearly marks which lines of the document differ between the files and which ones are the same. We can redirect the output to a new file.
  
- \begin{lstlisting}[language={bash}, frame=single,basicstyle=\footnotesize]
+ \begin{lstlisting}[language={bash}, frame=single,basicstyle=\footnotesize
+    ,basicstyle=\footnotesize\color{cyan}    % setting font
+   ,keywordstyle=\color{magenta}            % setting font for keywords 
+   ,stringstyle=\color{brown}
+   ,commentstyle=\color{ForestGreen} 
+ ]
   latexdiff day1latex.tex day1latex_adjusted1.tex > differences_day1latex.tex
 \end{lstlisting}~\vspace{1ex}
 %\stepcounter{samplecode}
