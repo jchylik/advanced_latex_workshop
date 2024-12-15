@@ -145,7 +145,7 @@
   \renewcommand{\contentsname}{\small{Overview of Pieces}}
   
   % --- graphic commands --------------------
-  \DeclareGraphicsExtensions{.png,.jpg}
+  \DeclareGraphicsExtensions{.png,.jpg} 
 
   % --- colour definition ------------------
   % colour definition
@@ -174,23 +174,24 @@
  \pagenumbering{roman}  
  \setcounter{page}{1}
 %-------- Workshop overview-------------------------------
- We are organising an informal \textbf{workshop} on the \textbf{intermediate and advanced topics} in \LaTeX.
-Although there are various \LaTeX tutorials and templates floating around, but they often omit some tools and packages that are useful in meteorology and geophysics. The workshop is primary focused on PhD students who are starting to write their thesis, but it is open to other \LaTeX users as well.
- \begin{enumerate}
- \item  Monday 19. June --- from 12:45 in CIP room 
- \item  Wednesday 21. June --- from 15:00 in CIP room
-\end{enumerate}
-
-\noindent
-You can work from CIP workstation or bring your own device.~\\
-
- \begin{tabular}{l p{0.7\textwidth}}
-   target audience: & people with previous experience with \LaTeX \\
-   aims:  & discuss \LaTeX ~topics practice skills \\
-   duration: & one and half hour from start time or until you start getting tired \\
-   topics: & see following chapters \ref{chap:intro}, \ref{chap:monday}, and \ref{chap:wednesday} \\
-   registration: & comment in this Slack thread \\ 
- \end{tabular}
+ \section*{Preface} 
+ 
+ This document is a second part of the guidebook on intermediate and advanced topics in \LaTeX, with a target audience of researchers and other professionals who often have to use \LaTeX.\\
+ 
+ 
+ This guidebook was originally started for the purpose of a informal workshop held at the University of Cologne. 
+% The original overview follows:
+%
+% \noindent
+% You can work from CIP workstation or bring your own device.~\\
+%
+% \begin{tabular}{l p{0.7\textwidth}}
+%   target audience: & people with previous experience with \LaTeX \\
+%   aims:  & discuss \LaTeX ~topics practice skills \\
+%   duration: & one and half hour from start time or until you start getting tired \\
+%   topics: & see following chapters \ref{chap:intro}, \ref{chap:monday}, and \ref{chap:wednesday} \\
+%   registration: & comment in this Slack thread \\ 
+% \end{tabular}
 
 %--------------
 \maketitle
@@ -459,7 +460,7 @@ While this table is missing a header, we add it into the first optional argument
 
 \refstepcounter{samplecode} 
 \lstinputlisting[ language={[latex]tex},      % tex syntax, latex option
-  caption={Importing from csv file (example \alph{samplecode})}, label={code:csvimport}, 
+  caption={Importing from csv file (example \alph{samplecode})}, label={code:csvimport_header}, 
   firstline=440, firstnumber=470, lastline=460, numbers=left, captionpos=b,
   breaklines=true, basicstyle=\scriptsize\color{darkgray}, frame=single,
   keywordstyle=\bf\color{magenta}, ,commentstyle=\color{ForestGreen}  % comments in different colour
