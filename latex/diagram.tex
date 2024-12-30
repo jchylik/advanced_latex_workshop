@@ -1,9 +1,9 @@
      % tikz diagram
      \begin{tikzpicture}[node distance=7mm, auto,]
         %nodes
-        \node[point] (market) { \nameref{sec:automatic} };
+        \node[point] (market) { Test presentations (see \ref{sec:automatic}) };
         \node[point, inner sep=5pt,below=0.5cm of market]
-        (conference) {Conferences (see \ref{sec:automatic})};
+        (conference) {Conferences (see \ref{sec:empty})};
         % We make a dummy figure to make everything look nice.
         \node[above=of market] (dummy) {};
         \node[right=of dummy] (t) {Poster template}

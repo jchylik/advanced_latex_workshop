@@ -100,7 +100,7 @@ To try this, write some dummy text in a separate file and insert is here using t
 \input{./data/just2lines.txt}\\
 
 
-% #2 
+% #2  
 The \texttt{input} statement can also work on multiple levels
 \begin{enumerate}
     \item Make a copy of \texttt{style1headerfooter.tex} and modify it.
@@ -110,7 +110,7 @@ The \texttt{input} statement can also work on multiple levels
 
 
 
-\subsection{Automatically Generated Lists} %\label{sec:automatic}
+\subsection{Automatically Generated Lists} \label{sec:lists}  
 There is an easy way how to create list of figures, tables, as well as index of phrases. 
  See on the following page: 
 
@@ -122,7 +122,7 @@ There is an easy way how to create list of figures, tables, as well as index of 
 
 %\pagenumbering{roman}
 %   \let\clearpage\relax 
-   \tableofcontents
+   \tableofcontents 
     \label{contents}
    \addcontentsline{toc}{section}{Table of Contents}  
    \let\clearpage\relax
@@ -140,7 +140,7 @@ There is an easy way how to create list of figures, tables, as well as index of 
 \setcounter{figure}{1} 
 \addcontentsline{lof}{figure}{ \arabic{chapter}.\arabic{figure}  Fake Figure} 
 
-\newpage
+\newpage 
 
 \setcounter{chapter}{2}
 \newcounter{warning}[chapter]
@@ -257,7 +257,7 @@ Some of the previous pages are not numbered in arabic numbers, but in roman numb
   of section \alph{section}                           % letters
   of chapter \Roman{chapter}. \\                      % capital roman numerals
 
-  We can also refer to counters in references. 
+  We can also refer to counters in references.
   
   
 
