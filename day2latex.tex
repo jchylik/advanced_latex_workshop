@@ -421,7 +421,8 @@ Sure, if you want to risk messing up the whole document and losing the newest va
 \noindent
 A better solution is to export the table in a separate file and just input here, such as:
 \refstepcounter{samplecode} 
-\begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize]
+\begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize, breaklines=true, basicstyle=\scriptsize\color{darkgray}, frame=single,
+  keywordstyle=\bf\color{magenta}, commentstyle=\color{ForestGreen} ]
   \input{/somefolder/exported_table.tex}
 \end{lstlisting}
 
@@ -429,7 +430,7 @@ A better solution is to export the table in a separate file and just input here,
 This might seem like a good choice solution t first, but it still means that we need to export the table to \LaTeX format every time we change some value in the source data. Would it be perhaps possible do read the values directly from the source file? A short answer is yes: there are even some more comfortable solutions.
 
 \subsection{Importing Tables} \label{sec:tables}
-Instead of copy \& paste values into tables, we just read them from an external \index{csv} csv file and format them. Although the following code might seem complicated at first, it is pretty straightforward and it saves us a lot of time. The command \texttt{\textbackslash csvreader} is followed first by the basic definition of the alignment of the column, then the source file, which columns from the source we output, and finally displaying the columns:\\
+Instead of copy \& paste values into tables, we just import them \emph{from an external} \index{csv} \emph{csv file} and format them. Although the following code might seem complicated at first, it is pretty straightforward and it saves us a lot of time. The command \texttt{\textbackslash csvreader} is followed first by the basic definition of the alignment of the column, then the source file, which columns from the source we output, and finally displaying the columns:\\
 
 
 
@@ -456,8 +457,16 @@ Instead of copy \& paste values into tables, we just read them from an external 
   \end{center}
 \end{table} ~\vspace{1ex}
 
+This approach ahas a number of advantages:
+\begin{itemize}
+ \item It saves time, we do not need to rewrite any values.
+ \item No need to open the whole data file, the command just points to the part that is used.
+ \item If the data file changes, we do not need to adjust our \LaTeX document, we just compile it again.
+ \item The styling of the table is separate from the data in the table.~\vspace{2ex}
+\end{itemize}
 
-While this table is missing a header, we add it into the first optional argument of the command.\\
+
+You might have noticed that out table is missing a header. We can easily add it into the first optional argument of the command.\\
 
 
 \refstepcounter{samplecode} 
