@@ -350,7 +350,7 @@ With the package \textbf{listings}, you can show the structured code and highlig
  \item Directly copy and paste to the \LaTeX  document --- see listing \ref{code:python}.
  \item You point to the source code file 
  \begin{itemize}
-  \item[\(\circ\)] You juts need to state the path to the file and which lines to list
+  \item[\(\circ\)] You just need to state the path to the file and which lines to list
   \item[\(\circ\)] You can event point to the source code of this very file (see \ref{code:thislatex}).
  \end{itemize}
 \end{itemize}
@@ -374,7 +374,7 @@ With the package \textbf{listings}, you can show the structured code and highlig
 
 \refstepcounter{samplecode} 
 \lstinputlisting[ language={[latex]tex}     % new listing: tex syntax, latex option
-  ,caption={Self-showing code (example \Alph{samplecode}) with higligthed syntex and line numbers}
+  ,caption={Self-showing code (example \Alph{samplecode}) with highlighted \index{code!highlight} syntax and line numbers}
   ,label={code:thislatex}
   ,firstline=357                            % where in the file to start
   ,firstnumber=357                          % adjusting the shown numbers
@@ -415,7 +415,7 @@ With the package \textbf{listings}, you can show the structured code and highlig
 
 \section{Tables}
 
-Sometimes we directly write a table in the \LaTeX document. But sometimes we need values from and external file. Shall we just copy and paste them?~\vspace{2ex}\\
+Sometimes we directly write a table \index{table} in the \LaTeX document. But sometimes we need values from and external file. Shall we just copy and paste them?~\vspace{2ex}\\
 Sure, if you want to risk messing up the whole document and losing the newest values.~\vspace{2ex}
 
 \noindent
@@ -427,10 +427,10 @@ A better solution is to export the table in a separate file and just input here,
 \end{lstlisting}
 
 \noindent
-This might seem like a good choice solution t first, but it still means that we need to export the table to \LaTeX format every time we change some value in the source data. Would it be perhaps possible do read the values directly from the source file? A short answer is yes: there are even some more comfortable solutions.
+This might seem like a good choice solution at first, but it still means that we need to export the table to \LaTeX format every time we change some value in the source data. Would it be perhaps possible do read the values directly from the source file? A short answer is yes: there are even some more comfortable solutions.
 
 \subsection{Importing Tables} \label{sec:tables}
-Instead of copy \& paste values into tables, we just import them \emph{from an external} \index{csv} \emph{csv file} and format them. Although the following code might seem complicated at first, it is pretty straightforward and it saves us a lot of time. The command \texttt{\textbackslash csvreader} is followed first by the basic definition of the alignment of the column, then the source file, which columns from the source we output, and finally displaying the columns:\\
+Instead of copy \& paste values into tables, we just import \index{table!import} them \emph{from an external} \index{csv} \emph{csv file} and format them. Although the following code might seem complicated at first, it is pretty straightforward and it saves us a lot of time. The command \texttt{\textbackslash csvreader} is followed first by the basic definition of the alignment of the column, then the source file \index{table!import!csv}, which columns from the source we output, and finally displaying the columns:\\
 
 
 
@@ -466,7 +466,7 @@ This approach ahas a number of advantages:
 \end{itemize}
 
 
-You might have noticed that out table is missing a header. We can easily add it into the first optional argument of the command.\\
+You might have noticed that our table is missing a header \index{table!header}. We can easily add it into the first optional argument of the command.\\
 
 
 \refstepcounter{samplecode} 
@@ -539,7 +539,7 @@ You might have noticed that out table is missing a header. We can easily add it 
 
 \newpage
 \section{Macros}
-We can very much speedup work in \LaTeX with macros --- simple scripts and aliases that speed-up the work.
+We can very much speedup work in \LaTeX with \index{macro} macros --- simple scripts and aliases that speed-up the work.
 
 If we repeatedly write a complicate math expression or symbol, such as
 \[ \theta^{\scriptscriptstyle \mathrm{(ML)}} =  \]
@@ -559,7 +559,7 @@ and then just output \( \thml \) by calling the macro:
     frame=single,basicstyle=\footnotesize]
      \thml
 \end{lstlisting}
-\index{macro@{\bf{macro definition}}}
+\index{macro!definition@{\bf{definition}}}
 Try to define a macro for your favourite colour math symbol and use it! \\
 
 \subsection{Macro Arguments}
@@ -599,7 +599,7 @@ Not only we can define new macros, but we can \emph{carefully} redefine \index{m
 
 
 \subsection{More on Macros} 
- We can also write conditional macros which allows us to say IF something, THEN do something, ELSE do something else. For that we would use package \texttt{ifthen} and call it:
+ We can also write \index{macro!conditions} conditional macros which allows us to say IF something, THEN do something, ELSE do something else. For that we would use package \texttt{ifthen} and call it:
  
 
 \begin{lstlisting}[language={[latex]tex},
@@ -617,7 +617,7 @@ Not only we can define new macros, but we can \emph{carefully} redefine \index{m
  We can even use \texttt{foreach} command from the package \texttt{tikz}. This is particularly useful for drawing repeated patterns.
  
 \section{Index Page}
-Index is a very popular part of books and longer documents.
+Index \index{index} is a very popular part of books and longer documents.
 To generate it, we need to use the package \texttt{makeidx} in the preamble and the command 
 \begin{lstlisting}[language={[latex]tex},
     frame=single,basicstyle=\footnotesize]
