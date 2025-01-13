@@ -420,9 +420,19 @@ The figure above is missing labels for some of the panels. Also, we would like t
 ]{./latex/diagram.tex}
  
  \subsection{Standalone}
- Some journals request you to upload each figure as a separate pdf. However, what can you do figure consists of multiple panels with labels added in LaTeX? No, you do not need to replot the figure, and you do not need to insert the figure as a separate page. Instead you use \textbf{standalone} class to produce a small image in pdf format. See example \texttt{latex/standalone.tex} of such document.\\
+ Some journals request you to upload each figure as a separate pdf. However, what can you do figure consists of multiple panels with labels added in LaTeX? No, you do not need to replot the figure, and you do not need to insert the figure as a separate page. Instead you use \textbf{standalone} document to produce a small image in pdf format. Instead of class such as articels or report, we start the source file with the standalone class:
  
- Once you compile a standalone document, you can use it as other graphical elements in pdf format. You can as well include it as an image in this document (see example on the next page).
+  \begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize\color{darkgray}, 
+  keywordstyle=\bf\color{magenta},
+  commentstyle=\color{ForestGreen},  %
+  breaklines=true,
+  ]
+  \documentclass{standalone}
+ \end{lstlisting}
+ followed by rest of the header and a short body. See an example \href{./latex/standalone.tex}{latex/standalone.tex} of such document. \\
+ 
+ 
+ Once you compile a standalone document, you can use it as other graphical elements in pdf format. You can as well include it as an image in this document (see the example on the next page).
   
  \begin{figure}[!h] 
      %\input{./latex/diagram.tex}
