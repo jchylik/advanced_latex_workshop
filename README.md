@@ -5,11 +5,12 @@ This are the materials for training advanced topics in LaTeX. It was originally 
 #### Topics covered:
 * combining latex documents from pieces
 * table of contents and other automatically generated lists
-* counters
+* references and counters
 * multipanel figures
 * flowcharts and schematics
-* code highlights
+* dispalying code snippets (including code highlights)
 * tables: importing and formatting
+* links and their styling
 * macros
 
 ### Prerequisities
