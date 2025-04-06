@@ -340,7 +340,7 @@ In this small exercise, we are going to add an entry to the table of content tha
 \newpage 
  \section{Modifying Plots and Schematics}\label{sec:figures}
  
- Inserting raster images in LaTeX is easy, however things get interesting when we start inserting vector graphics. Let us have a look on en example (Figure \ref{fig:figures}). Warning \arabic{warning}:  The figure might be boring.\\
+ Inserting raster images in \LaTeX is easy, however things get interesting when we start inserting vector graphics. Let us have a look on en example (Figure \ref{fig:figures}). Warning \arabic{warning}:  The figure might be boring.\\
  %\newpage
  %\thispagestyle{empty}
  %--> replace example with figure of radiation?
@@ -419,7 +419,7 @@ The figure above is missing labels for some of the panels. Also, we would like t
   frame=single
 ]{./latex/diagram.tex}
 
-In tikzpicture consists of nodes and edges. For noded we define their type, relative position, name, and displayed text. For edges we the define their shape and which nodes they are connecting, and we can also add a text to them. The other option is to place nodes at exact positions that, as the following example shows:
+This flowcharts in tikzpicture consists of nodes and edges. For nodes we define their type, relative position, name, and displayed text. For edges we the define their shape and which nodes they are connecting, and we can also add a text to them. The other option is to place nodes at exact positions that, as the following example shows:
 
 \lstinputlisting[ language={[latex]tex},      % tex syntax, latex option
   caption={Tikz Latex code for Figure \ref{fig:picture}b }, label={code:thislatex}, 
@@ -433,7 +433,7 @@ In tikzpicture consists of nodes and edges. For noded we define their type, rela
 ]{./latex/flowchart.tex}
  
  \subsection{Standalone}
- Some journals request you to upload each figure as a separate pdf. However, what can you do figure consists of multiple panels with labels added in LaTeX? No, you do not need to replot the figure, and you do not need to insert the figure as a separate page. Instead you use \textbf{standalone} document to produce a small image in pdf format. Instead of class such as articles or report, we start the source file with the standalone class:
+ Some journals request you to upload each figure as a separate pdf. However, what can you do figure consists of multiple panels with labels added in \LaTeX? No, you do not need to replot the figure, and you do not need to insert the figure as a separate page. Instead you use \textbf{standalone} document to produce a small image in pdf format. Instead of class such as articles or report, we start the source file with the standalone class:
  
   \begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize\color{darkgray}, 
   keywordstyle=\bf\color{magenta},
