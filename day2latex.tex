@@ -43,7 +43,7 @@
   \usepackage[colorlinks=true,linkcolor=interlink,citecolor=DarkCite]{hyperref}
   
   % \usepackage{picture}
-  \usepackage[usenames,dvipsnames]{xcolor}
+  \usepackage[usenames,dvipsnames]{xcolor} 
   \usepackage{colortbl} 
   
 
@@ -430,7 +430,7 @@ A better solution is to export the table in a separate file and just input here,
 This might seem like a good choice solution at first, but it still means that we need to export the table to \LaTeX format every time we change some value in the source data. Would it be perhaps possible do read the values directly from the source file? A short answer is yes: there are even some more comfortable solutions.
 
 \subsection{Importing Tables} \label{sec:tables}
-Instead of copy \& paste values into tables, we just import \index{table!import} them \emph{from an external} \index{csv} \emph{csv file} and format them. Although the following code might seem complicated at first, it is pretty straightforward and it saves us a lot of time. The command \texttt{\textbackslash csvreader} is followed first by the basic definition of the alignment of the column, then the source file \index{table!import!csv}, which columns from the source we output, and finally displaying the columns:\\
+Instead of copy \& paste values into tables, we just import \index{table!import} them \emph{from an external} \index{csv} \emph{csv file} and format them. Although the following code might seem complicated at first, it is pretty straightforward and it saves us a lot of time. The command \texttt{\textbackslash csvreader} is followed first by the basic definition of the alignment of the column, then the source file \index{table!import!csv}, which columns from the source we output, and finally displaying the columns:\\ 
 
 
 
@@ -618,7 +618,7 @@ Not only we can define new macros, but we can \emph{carefully} redefine \index{m
  
 \section{Index Page}
 Index \index{index} is a very popular part of books and longer documents.
-To generate it, we need to use the package \texttt{makeidx} in the preamble and the command 
+To generate it, we need to include the package \texttt{makeidx} in the preamble and place the command 
 
 \begin{lstlisting}[language={[latex]tex},
     frame=single,basicstyle=\footnotesize,
@@ -639,7 +639,7 @@ For example:
 ]{./latex/day2latex_backup.tex}  % {./day2latex.tex} %{./latex/day2latex_backup.tex}   
 
 
-When we want to index a specific combination of words, but group them together on the index page, we separate them by exclamation marks:
+When we want to index a specific combination of words, but group these subentries together on the index page, we use exclamation marks as delimeters:
 
 \begin{lstlisting}[language={[latex]tex},
     frame=single,basicstyle=\footnotesize,showstringspaces=false, 
@@ -647,8 +647,18 @@ When we want to index a specific combination of words, but group them together o
      caption={index entry consisting of multiple words},captionpos=b]
    \index{macro!argument} 
    \index{macro!argument!optional} 
- \end{lstlisting}
+ \end{lstlisting} 
+ 
+ 
+Some of the index entries might be related to other keyword. In order to include reference saying \emph{see also...} we include both key phrases in the command. And when we want to highlight some of the subentries, we add a formatting to them after the at symbol:
 
+\begin{lstlisting}[language={[latex]tex},
+    frame=single,basicstyle=\footnotesize,showstringspaces=false, 
+     keywordstyle=\color{magenta}, stringstyle=\color{brown}, commentstyle=\color{ForestGreen},
+     caption={highlighting subentries},captionpos=b]
+    \index{macro!definition@{\bf{definition}}}
+\end{lstlisting}
+ 
 You can see the result on the following page:
 
 
