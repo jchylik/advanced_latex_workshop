@@ -352,7 +352,7 @@ In this small exercise, we are going to add an entry to the table of content tha
  \end{figure}
  
 \subsection{Picture}
-The figure above is missing labels for some of the panels. Also, we would like to move the diagram on the left little bit higher and the one right little bit lower. Instead of opening the figures in some graphical editor, we can perform these tasks in \LaTeX with the environment \texttt{picture}. We encapsulate both panels in the environment, and define the coordinates where each panel is located. You can see the result in figure \ref{fig:picture}. 
+The figure above is missing labels for some of the panels. Also, we would like to move the diagram on the left little bit higher and the one right little bit lower. Instead of opening the figures in some graphical editor, we can perform these tasks in \LaTeX with the environment \texttt{picture}. We start the picture environment and encapsulate each panels in the \texttt{put} command, which in round brackets defines the coordinates where each panel is located. You can see the result in figure \ref{fig:picture}. 
 \begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize\color{darkgray}, 
   keywordstyle=\bf\color{magenta},
   commentstyle=\color{ForestGreen},  % 
