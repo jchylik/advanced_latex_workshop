@@ -73,7 +73,7 @@ Although there are various \LaTeX tutorials and templates floating around, but t
 
 
 \subsection{Combining Document from Pieces}
-Combining documents from multiple files speeds up the editing process, makes collaboration easier, and also lowers the risk of accidentally rewriting something. You can see an example how most of the header of this document is in a separate file.\\
+Combining documents from multiple files speeds up the editing process, makes collaboration easier, and also lowers the risk of accidentally rewriting something. For example, most of the header of this document is in a separate file. You can see the code below:\\
 
 \lstinputlisting[ language={[latex]tex},      % tex syntax, latex option
   caption={Input statement}, label={code:input}, 
@@ -85,7 +85,7 @@ Combining documents from multiple files speeds up the editing process, makes col
   breaklines=true
 ]{./day1latex_adjusted1.tex} 
 
-The input statements could be then again used in the file that was itself inputted:
+The input statement is not limited to the main document, it could be then again used in the file that was itself inputted:
 
 \lstinputlisting[ language={[latex]tex},      % tex syntax, latex option
   caption={Input statement inside in1header.tex}, label={code:input2}, 
@@ -97,7 +97,7 @@ The input statements could be then again used in the file that was itself inputt
 ]{./latex/in1header.tex} 
 
 % #1 
-To try this, write some dummy text in a separate file and insert is here using the \texttt{input} command:\\
+In order to try this, write some dummy text in a separate file and insert is here using the \texttt{input} command:\\
 \input{./data/just2lines.txt}\\
 
 
@@ -112,8 +112,7 @@ The \texttt{input} statement can also work on multiple levels
 
 
 \subsection{Automatically Generated Lists} \label{sec:lists}  
-There is an easy way how to create list of figures, tables, as well as index of phrases. 
- See on the following page: 
+There is an easy way how to create list of figures, tables, as well as index of phrases. Let us first see the following pages. After that, we will explain how it sis done. 
 
 % We are going to start witth this documet
 %  #1 change the class of document from article to report
@@ -183,8 +182,8 @@ On the previous pages we can see lists of tables, figures, symbols and abbreviat
    \listoffigures
 \end{lstlisting}
 
-Similarly to adding to \textbf{toc}(table of content), we can add to the 
-\textbf{lof} (list of figures), \textbf{lot} (list of tables), and possibly other defined lists.   
+Similarly to adding to \textbf{toc} (table of content), we can add to the 
+\textbf{lof} (list of figures), \textbf{lot} (list of tables), and possibly other user-defined lists.   
 
   \subsection{Force Adding Entries to Lists}
   Sometimes we are faced with a situation that figure would be inserted as a separate page afterwards, or that we want to refer to a figure in the chapter that has not yet been written. Instead of compiling the document with multiple warnings or errors, we can force add entries into the table of content, table of lists, etc.\\
