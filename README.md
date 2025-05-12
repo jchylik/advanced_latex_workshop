@@ -26,7 +26,7 @@ Furthermore, for some of the tasks you also need:
 
 To start with the training, 
  * Open [day1latex.tex](./day1latex.tex "day1") and compile (with PdfLatex or some built-in command).
- * All the further instructions for the modification of the file are in the compiled document. Follow them.
+ * All the further instructions for the modification of the latex file are in the compiled document. Follow them.
  * Once you are finished, continue with [day2latex.tex](./day2latex.tex "day 2") and compile. Again, all the further instructions for the modification of the file are in the compiled document. Follow them.
 
 The example of compiled PDFs are located in the folder [compiled](./compiled "folder with compiled pdfs") (Please note that the the compiled pdfs are updated only occasionally.)
