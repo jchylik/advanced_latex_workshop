@@ -305,7 +305,7 @@ We can also play with the style of the latexdiff file. \\
 And with the option \texttt{--type}, we can also define how the changes appear. The two most useful choices are:
 \begin{itemize}
  \item UNDERLINE --- the added text is not only blue, but also underlined 
- \item PDFCOMMENT --- changes are not marked in the text, but as PDF comments! 
+ \item PDFCOMMENT --- changes are not marked in the text, but as \index{pdf!comment} PDF comments! 
 \end{itemize}
 
 Go ahead and give it a try \stepcounter{samplecode} (example \alph{samplecode}):
@@ -326,7 +326,7 @@ Go ahead and give it a try \stepcounter{samplecode} (example \alph{samplecode}):
 There are a couple of other tools that can speed up your work with .
 Unfortunately they are not installed here. But you can try them later:
 \begin{itemize}
-    \item \emph{pdfgrep} --- similar to grep, searches inside a PDF document that was already compiled; See: \href{https://www.geeksforgeeks.org/pdfgrep-command-in-linux/}{tutorial},  \href{https://pdfgrep.org/doc.html}{man page}
+    \item \emph{pdfgrep} --- similar to grep, searches inside a PDF document \index{pdf} that was already compiled; See: \href{https://www.geeksforgeeks.org/pdfgrep-command-in-linux/}{tutorial},  \href{https://pdfgrep.org/doc.html}{man page}
     \item \emph{pdftk} --- tool for splitting, combing and mixing pdf documents; See: \href{https://www.pdflabs.com/docs/pdftk-cli-examples/}{pdft examples}
 \end{itemize}
 %-> add links 
@@ -344,6 +344,7 @@ In the header we already inserted \texttt{lipsum} package, and here we insert th
 
 
 \section{Code Listing with Highligths}
+\index{code!highlights}
 You have already seen example of code listing in the previous paragraphs. Now we will look at this topic in more detail.
 With the package \textbf{listings}, you can show the structured code and highlight parts of it. The location of the code could be:
 \begin{itemize}
@@ -357,6 +358,7 @@ With the package \textbf{listings}, you can show the structured code and highlig
 
 \setcounter{lstlisting}{\value{samplecode}}
 \refstepcounter{samplecode}
+\index{python}
 \begin{lstlisting}[language={python}       % listing: python code
    ,caption={Copy and paste a few lines of python code (example \alph{samplecode})}
    ,label={code:python} 
@@ -376,9 +378,9 @@ With the package \textbf{listings}, you can show the structured code and highlig
 \lstinputlisting[ language={[latex]tex}     % new listing: tex syntax, latex option
   ,caption={Self-showing code (example \Alph{samplecode}) with highlighted \index{code!highlight} syntax and line numbers}
   ,label={code:thislatex}
-  ,firstline=357                            % where in the file to start
-  ,firstnumber=357                          % adjusting the shown numbers
-  ,lastline=385                             % what is the last line
+  ,firstline=358                            % where in the file to start
+  ,firstnumber=358                          % adjusting the shown numbers
+  ,lastline=388                             % what is the last line
   ,numbers=left
   ,captionpos=b, breaklines=true
   ,frame=single
@@ -633,7 +635,7 @@ For example:
 \refstepcounter{samplecode} 
 \lstinputlisting[ language={[latex]tex},      % tex syntax, latex option
   caption={inserting index entry in the text}, label={code:index}, 
-  firstline=429, firstnumber=429, lastline=430, numbers=left, captionpos=b,
+  firstline=418, firstnumber=418, lastline=420, numbers=left, captionpos=b,
   breaklines=true, basicstyle=\scriptsize\color{darkgray}, frame=single,
   keywordstyle=\bf\color{magenta}, commentstyle=\color{olive}  % comments in different colour
 ]{./latex/day2latex_backup.tex}  % {./day2latex.tex} %{./latex/day2latex_backup.tex}   

@@ -66,7 +66,7 @@ Although there are various \LaTeX tutorials and templates floating around, but t
 %-----------------------------------------------------------------------------
  
  \maketitle
- 
+  \setcounter{page}{3}
 \section{Monday} \label{sec:monday}
 
 
@@ -341,7 +341,7 @@ In this small exercise, we are going to add an entry to the table of content tha
 \newpage 
  \section{Modifying Plots and Schematics}\label{sec:figures}
  
- Inserting raster images in \LaTeX is easy, however things get interesting when we start inserting vector graphics. Let us have a look on en example (Figure \ref{fig:figures}). Warning \arabic{warning}:  The figure might be boring.\\
+ Inserting raster images in \LaTeX  is easy, however things get interesting when we start inserting vector graphics. Let us have a look on en example (Figure \ref{fig:figures}). Warning \arabic{warning}:  The figure might be boring.\\
  %\newpage
  %\thispagestyle{empty}
  %--> replace example with figure of radiation?
@@ -353,33 +353,23 @@ In this small exercise, we are going to add an entry to the table of content tha
  \end{figure}
  
 \subsection{Picture}
-The figure above is missing labels for some of the panels. Also, we would like to move the diagram on the left little bit higher and the one right little bit lower. Instead of opening the figures in some graphical editor, we can perform these tasks in \LaTeX with the environment \texttt{picture}. We start the picture environment and encapsulate each panels in the \texttt{put} command, which in round brackets defines the coordinates where each panel is located. You can see the result in figure \ref{fig:picture}. 
-\begin{lstlisting}[language={[latex]tex}, frame=single,basicstyle=\footnotesize\color{darkgray}, 
+The figure above is missing labels for some of the panels. Also, we would like to move the diagram on the left little bit higher and the one right little bit lower. Instead of opening the figures in some graphical editor, we can perform these tasks in \LaTeX with the environment \texttt{picture}. We start the picture environment and encapsulate each panels in the \texttt{put} command, which in round brackets defines the coordinates where each panel is located. The postion is given with respect to the bottom left corner (unless specified otherwise). You can see the result in figure \ref{fig:picture}. 
+\lstinputlisting[ language={[latex]tex},      % tex syntax, latex option
+  caption={Tikz Latex code for Figure \ref{fig:picture}a }, label={code:thislatex}, 
+  firstline=367, firstnumber=1,  lastline=384,
+  numbers=left, captionpos=b,
+  basicstyle=\scriptsize\color{darkgray}, 
   keywordstyle=\bf\color{magenta},
-  commentstyle=\color{ForestGreen},  % 
-  breaklines=true
-  ]
- \begin{picture}(220,180)              % define the size of the picture 
- \put(  0,  20){                       % first panel shifted up by 20 (mm, points, etc.)
-     \input{./latex/diagram.tex}       % insert the diagram as first panel
- }
- \put(160,  0){                        % first panel shifted right by 160 (mm,
-     \includegraphics[width=\textwidth]{./figures/prof_tend.pdf} 
- }
- \put(  0,  170){                      % position of the label for the first panel
-     {\scriptsize a)}                  % label for the first panel 
- }
- \put(185,  170){                     % position of the label for the second panel
-     {\scriptsize b)}                  % label for the second panel 
- }
-\end{picture} \caption[Picture package]{Here we take ...
-\end{lstlisting}
+  commentstyle=\color{ForestGreen},  %
+  breaklines=true,
+  frame=single
+]{./day1latex_adjusted1.tex}
 \begin{figure}[h]
  \begin{picture}(240,175)              % define the size of the picture 
- \put(  0,  20){                       % first panel shifted up by 20 (mm, points, etc.)
+ \put(  0,  20){                       % left panel shifted up by 20 (mm, points, etc.)
      \input{./latex/diagram.tex}       % insert the diagram as first panel
  }
- \put(170,  0){                        % first panel shifted right by 160 (mm,
+ \put(170,  0){                        % right panel shifted right by 160 (mm,
      \includegraphics[width=0.52\textwidth]{./figures/prof_tend.pdf}
  }
  \put(  0,  170){                      % position of the label for the first panel
