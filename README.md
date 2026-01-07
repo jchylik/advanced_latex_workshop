@@ -8,7 +8,7 @@ This are the materials for training advanced topics in LaTeX. It was originally 
 * references and counters
 * multipanel figures
 * flowcharts and schematics
-* dispalying code snippets (including code highlights)
+* displaying code snippets (including code highlights)
 * tables: importing and formatting
 * links and their styling
 * macros
@@ -16,7 +16,7 @@ This are the materials for training advanced topics in LaTeX. It was originally 
 ### Prerequisities
 
 To start with this LaTeX training, you need following:
-* LaTeX compiler (editting online on overleaf is also OK)
+* LaTeX compiler (editing online on overleaf is also OK)
 * PDF viewer
 
 Furthermore, for some of the tasks you also need:
@@ -32,7 +32,7 @@ To start with the training,
 The example of compiled PDFs are located in the folder [compiled](./compiled "folder with compiled pdfs") (Please note that the the compiled pdfs are updated only occasionally.)
 
 ### History
-This workshop was originally designed for the unofficial "Workshop on intermediate and advance topics in LaTeX" for [InScAPE research group](https://atmos.meteo.uni-koeln.de/inscape "website of InScAPE research group") at the [Institut of Geophysics and Meteorology](https://geomet.uni-koeln.de/ "website of Institut of Geophysics and Meteorology"), Univeristy of Cologne. 
+This workshop was originally designed for the unofficial "Workshop on intermediate and advance topics in LaTeX" for [InScAPE research group](https://atmos.meteo.uni-koeln.de/inscape "website of InScAPE research group") at the [Institute of Geophysics and Meteorology](https://geomet.uni-koeln.de/en/ "website of Institute of Geophysics and Meteorology"), University of Cologne. 
 
 
 Further edits reflect questions that followed after the workshop.
