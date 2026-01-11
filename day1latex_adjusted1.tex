@@ -355,7 +355,7 @@ In this small exercise, we are going to add an entry to the table of content tha
 \subsection{Picture}
 The figure above is missing labels for some of the panels. Also, we would like to move the diagram on the left little bit higher and the one right little bit lower. Instead of opening the figures in some graphical editor, we can perform these tasks in \LaTeX with the environment \texttt{picture}. We start the picture environment and encapsulate each panels in the \texttt{put} command, which in round brackets defines the coordinates where each panel is located. The postion is given with respect to the bottom left corner (unless specified otherwise). You can see the result in figure \ref{fig:picture}. 
 \lstinputlisting[ language={[latex]tex},      % tex syntax, latex option
-  caption={Tikz Latex code for Figure \ref{fig:picture}a }, label={code:thislatex}, 
+  caption={Tikz Latex code for Figure \ref{fig:picture}a }, label={code:tikz}, 
   firstline=367, firstnumber=1,  lastline=384,
   numbers=left, captionpos=b,
   basicstyle=\scriptsize\color{darkgray}, 
@@ -400,7 +400,7 @@ The figure above is missing labels for some of the panels. Also, we would like t
  We will have a brief look at an example:\\
  
 \lstinputlisting[ language={[latex]tex},      % tex syntax, latex option
-  caption={Tikz Latex code for Figure \ref{fig:picture}a }, label={code:thislatex}, 
+  caption={Tikz Latex code for Figure \ref{fig:picture}a }, label={code:diagram}, 
   firstline=2, firstnumber=2, % lastline=387,
   numbers=left, captionpos=b,
   basicstyle=\scriptsize\color{darkgray}, 
@@ -413,12 +413,12 @@ The figure above is missing labels for some of the panels. Also, we would like t
 This flowcharts in tikzpicture consists of nodes and edges. For nodes we define their type, relative position, name, and displayed text. For edges we the define their shape and which nodes they are connecting, and we can also add a text to them. The other option is to place nodes at exact positions that, as the following example shows:
 
 \lstinputlisting[ language={[latex]tex},      % tex syntax, latex option
-  caption={Tikz Latex code for Figure \ref{fig:picture}b }, label={code:thislatex}, 
+  caption={Tikz Latex code for Figure \ref{fig:picture}b }, label={code:flowchart}, 
   firstline=3, firstnumber=3,  lastline=6,
   numbers=left, captionpos=b,
   basicstyle=\scriptsize\color{darkgray}, 
   keywordstyle=\bf\color{magenta},
-  commentstyle=\color{ForestGreen},  %
+  commentstyle=\color{ForestGreen},  % 
   breaklines=true,
   frame=single
 ]{./latex/flowchart.tex}
@@ -458,7 +458,7 @@ This flowcharts in tikzpicture consists of nodes and edges. For nodes we define 
    \begin{figure}[!ht]
     \includegraphics[width=\textwidth]{./latex/standalone.pdf}
         \caption[Diagrams and plots]{We can also compile the figure as separate \textbf{standalone} \index{standalone} pdf and then include it as a graphical element. }  
-      \label{fig:standalone}
+      \label{fig:standalone} 
  \end{figure}
 
  \newpage 
@@ -508,6 +508,15 @@ This flowcharts in tikzpicture consists of nodes and edges. For nodes we define 
 %   Longer documents sometimes include index pages.
 %   \printindex  
 
+\subsection{Further Reading}
+\begin{itemize}
+ \item \href{https://www.ctan.org/pkg/latexdiff}{Latexdiff package page}
+ \item \href{https://texdoc.org/serve/latexdiff/0}{Latexdiff guidebook}
+ \item \href{https://texra.ai/guide/latex-diff.html}{Advanced Latexdiff guidelines}
+\end{itemize}
+
+
+
 \section{Outlook for Wednesday}\label{sec:wednesday}
 
 \begin{itemize}
@@ -518,6 +527,7 @@ This flowcharts in tikzpicture consists of nodes and edges. For nodes we define 
 \end{itemize}
 
 Continue with the file: \texttt{day2latex.tex}
+
 
 
  
