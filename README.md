@@ -35,7 +35,7 @@ The example of compiled PDFs are located in the folder [compiled](./compiled "fo
 This workshop was originally designed for the unofficial "Workshop on intermediate and advance topics in LaTeX" for [InScAPE research group](https://atmos.meteo.uni-koeln.de/inscape "website of InScAPE research group") at the [Institute of Geophysics and Meteorology](https://geomet.uni-koeln.de/en/ "website of Institute of Geophysics and Meteorology"), University of Cologne. 
 
 
-Further edits reflect questions that followed after the workshop.
+Further edits reflect questions that followed after the workshop. Plans for future update are summarized in [plans.md](./plans.md "Overview of future plans")
 
 
 
